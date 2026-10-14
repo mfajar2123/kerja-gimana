@@ -18,6 +18,18 @@ Build variables, bila perlu dipatok lewat dashboard: `NODE_VERSION=22.23.3`, `PN
 
 `build:cloudflare` memilih preset `cloudflare_module`. `wrangler.jsonc` menyimpan nama Worker dan compatibility date. Nitro menghasilkan `.output/server/wrangler.json` berisi main dan binding aset yang benar, lalu `.wrangler/deploy/config.json` mengarahkan Wrangler ke file itu. File hasil build tersebut tidak perlu dicommit. `keep_vars: true` mempertahankan variabel runtime yang diatur melalui dashboard. Tidak ada config `env.production` tambahan; lingkungan Production di dashboard cukup untuk deploy ini.
 
+### Jika deploy gagal dengan `node: Exec format error`
+
+Paket `node-win-x64` sebelumnya menyediakan executable Windows melalui `node_modules/.bin/node`. Shim Wrangler mendahulukan executable tersebut, sehingga deploy di Linux gagal sebelum Wrangler berjalan. Paket itu telah dihapus dari manifest dan lockfile. Node harus diinstal melalui build image atau pengelola versi pada mesin lokal, bukan sebagai dependency aplikasi.
+
+1. Commit dan push `package.json` serta `pnpm-lock.yaml` yang sudah diperbaiki ke `master`.
+2. Pastikan build command `pnpm build:cloudflare`, deploy command `npx wrangler deploy`, dan build variable `NODE_VERSION=22.23.3`.
+3. Buka **Settings → Builds → Build cache → Clear cache** untuk membuang dependency lama, lalu jalankan build ulang dari commit terbaru. Mengulang deployment commit lama tidak menyertakan perbaikan ini.
+
+Versi Node didukung melalui `.nvmrc` dan `NODE_VERSION` sesuai [build image Cloudflare](https://developers.cloudflare.com/workers/ci-cd/builds/build-image/). Pembersihan cache mengikuti [panduan build cache](https://developers.cloudflare.com/workers/ci-cd/builds/build-caching/). Perubahan ini tidak memerlukan paket berbayar atau aktivasi billing.
+
+Verifikasi setelah perbaikan: manifest dan lockfile tidak lagi memuat `node-win-x64`, executable `node`/`node.exe` tidak ada di `node_modules/.bin`, Wrangler melaporkan versi 4.150.0, dan deploy dry-run kembali lulus (1670.91 KiB / gzip 390.68 KiB, binding `ASSETS`). Pemeriksaan ini dijalankan di Windows memakai Node 22.23.3 dari luar dependency aplikasi; build Linux Cloudflare perlu dijalankan ulang untuk memverifikasi lingkungan deployment sebenarnya.
+
 ## Runtime variables and secrets → Production
 
 Masukkan di **Runtime variables and secrets**, bukan hanya di **Builds → Variables and secrets**. Variabel build tidak otomatis tersedia ketika request pengguna dilayani.

@@ -4,7 +4,7 @@ KerjaGimana is an Indonesian workplace-transparency product for company research
 
 ## Local setup
 
-Use Node.js 22.21 or newer and pnpm 10 or newer. On Windows, the lockfile includes a pinned Node 22.23.3 executable for local commands; on CI and other platforms, install Node 22.23.3 directly. The project uses Nuxt 4, Vue 3, Nitro, TypeScript, Tailwind CSS 4, shadcn-vue (Reka UI primitives), Zod, Supabase, Vitest, and Playwright.
+Install Node.js 22.23.3 (the version in `.nvmrc`) and pnpm 12.6.0 on your machine or CI build image before installing dependencies. Keep the Node executable outside project dependencies: a platform-specific Node package can shadow the build image's Node and break Linux deployment. The project uses Nuxt 4, Vue 3, Nitro, TypeScript, Tailwind CSS 4, shadcn-vue (Reka UI primitives), Zod, Supabase, Vitest, and Playwright.
 
 1. Install dependencies with `pnpm install`.
 2. Run `pnpm setup:env`. This creates `.env` when missing and generates a cryptographically random rate-limit secret without overwriting existing credentials. `pnpm dev` also runs this step automatically. Add the actual Supabase project URL, publishable key, and server-only service-role key when a project is available.
