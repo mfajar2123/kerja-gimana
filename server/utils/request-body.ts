@@ -1,4 +1,4 @@
-import { createError, type H3Event } from 'h3'
+import { createError, readRawBody, type H3Event } from 'h3'
 
 export async function readLimitedJson(event: H3Event, limit = 32768): Promise<unknown> {
   if (Object.hasOwn(event.context, 'requestJson')) return event.context.requestJson
@@ -10,6 +10,7 @@ export async function readLimitedJson(event: H3Event, limit = 32768): Promise<un
     if (size > limit) throw tooLarge()
     chunks.push(chunk)
   }
+  const request = event.node.req
   const webBody = event.web?.request?.body
   if (webBody) {
     const reader = webBody.getReader()
@@ -21,8 +22,12 @@ export async function readLimitedJson(event: H3Event, limit = 32768): Promise<un
       }
     } catch (error) { void reader.cancel().catch(() => {}); throw error }
     finally { reader.releaseLock() }
+  } else if ('body' in request || 'rawBody' in request || Symbol.for('h3RawBody') in request) {
+    // Nitro's Cloudflare localFetch supplies a buffered body on an already-ended
+    // mock Node request. H3 reads that buffer; listening for stream data loses it.
+    const bufferedBody = await readRawBody(event, false)
+    if (bufferedBody) append(bufferedBody)
   } else {
-    const request = event.node.req
     if (!request.readableEnded) await new Promise<void>((resolve, reject) => {
       function cleanup() { request.off('data', onData); request.off('end', onEnd); request.off('error', onError); request.off('aborted', onAborted) }
       function onData(chunk: Uint8Array) {
