@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "kerja-gimana",
+  "compatibility_date": "2026-10-14",
+  "compatibility_flags": ["nodejs_compat"],
+  // Nitro writes the correct main/ASSETS paths and a Wrangler redirect during build:cloudflare.
+  // Preserve the runtime variables entered in the Cloudflare dashboard across deployments.
+  "keep_vars": true
+}

@@ -24,6 +24,8 @@ The app renders honestly when Supabase is not configured: the directory and stat
 - `pnpm test` — unit tests for validation, privacy guards, and salary normalization
 - `pnpm test:e2e` — Playwright desktop/mobile, responsive, and accessibility smoke tests
 - `pnpm build` — production Node server build
+- `pnpm build:cloudflare` — Cloudflare Workers build; generates Wrangler entry/ASSETS configuration
+- `pnpm preview:cloudflare` — local Wrangler runtime, using ignored `.dev.vars`
 - `pnpm test:backend` — live local API/Auth/database smoke test using temporary accounts and pending submissions, removed afterward; requires a configured `.env` and running local server
 - `pnpm qa:auth` — real user/admin browser QA for session-aware navigation, account switching, and logout across tabs; temporary accounts are removed afterward
 - `pnpm qa:features` — live API/RPC security, moderation, recovery/deletion and populated mobile/browser QA; persistent demo fixtures required, temporary fixtures removed afterward
@@ -40,6 +42,7 @@ Create an account with a verified email, replace the placeholder in `supabase/ad
 ## Documentation
 
 - [Launch readiness](docs/launch-readiness.md) — current public launch blockers, business rules, and operating checklist
+- [Cloudflare Workers and Gmail SMTP](docs/cloudflare-workers.md) — dashboard fields, runtime secrets, callback URLs, and SMTP configuration
 - [Claude Startups preparation](docs/claude-startups.md) — dated official program findings and a factual application draft
 - Kompas Karier AI on the homepage is a coming-soon concept only; no model integration is active.
 

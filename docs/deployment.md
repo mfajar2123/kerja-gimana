@@ -1,5 +1,7 @@
 # Deployment
 
+For the `kerja-gimana` Worker / `master` branch configuration shown in the current dashboard, follow [Cloudflare Workers and Gmail SMTP setup](cloudflare-workers.md). Use `pnpm build:cloudflare` before `npx wrangler deploy`; ordinary `pnpm build` remains available for Node hosting.
+
 ## Runtime choice
 
 Nitro requires a server-capable runtime. A static export does not run these APIs. The low-cost target is Cloudflare Workers using Nitro's `cloudflare_module` preset and Workers Static Assets. Verify compatibility with the current Nuxt/Nitro release, then build with `NITRO_PRESET=cloudflare_module pnpm build` and deploy the generated worker with Wrangler. Commit the generated Wrangler config only after confirming its `main`, assets binding, compatibility date, and `nodejs_compat` setting match Nitro's output.

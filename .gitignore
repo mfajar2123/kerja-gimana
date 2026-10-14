@@ -1,6 +1,10 @@
 node_modules/
 .nuxt/
 .output/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
 .env
 .env.*
 !.env.example

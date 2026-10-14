@@ -17,7 +17,11 @@ export default defineNuxtConfig({
   },
   // Nuxt 4.6.0/Nitro 2.13.4 on Windows can externalize the SSR renderer
   // because its inline matcher misses backslash paths. Keep Nuxt's runtime bundled.
-  nitro: { compressPublicAssets: true, externals: { inline: [/[/\\]node_modules[/\\]nuxt[/\\]dist[/\\]/] } },
+  nitro: {
+    compressPublicAssets: true,
+    externals: { inline: [/[/\\]node_modules[/\\]nuxt[/\\]dist[/\\]/] },
+    cloudflare: { deployConfig: true, nodeCompat: true },
+  },
   shadcn: { prefix: 'Ui', componentDir: './app/components/ui' },
   typescript: { strict: true },
   runtimeConfig: {

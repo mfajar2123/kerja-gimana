@@ -1,0 +1,9 @@
+# Local Wrangler preview only. Copy to ignored .dev.vars and fill privately.
+# Gmail SMTP credentials belong in Supabase Auth settings, not here.
+NUXT_SUPABASE_URL=
+NUXT_SUPABASE_PUBLISHABLE_KEY=
+NUXT_SUPABASE_SERVICE_ROLE_KEY=
+NUXT_RATE_LIMIT_SECRET=
+NUXT_SITE_URL=http://localhost:8787
+NUXT_PUBLIC_SITE_URL=http://localhost:8787
+NUXT_PUBLIC_DEMO_DATA_ENABLED=true
