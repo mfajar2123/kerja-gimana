@@ -1,0 +1,17 @@
+{
+  "name": "kerjagimana-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "node prepare-assets.mjs",
+    "check": "node tools.mjs check .",
+    "preview": "node tools.mjs preview --background --no-open --port 3002",
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
+    "@ffprobe-installer/ffprobe": "2.1.2",
+    "gsap": "3.15.0",
+    "hyperframes": "0.8.151"
+  }
+}

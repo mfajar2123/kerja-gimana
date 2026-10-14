@@ -16,7 +16,7 @@ useSeoMeta({ title: 'Admin — KerjaGimana', robots: 'noindex,nofollow' })
     <NuxtPage v-if="route.path !== '/admin'" />
     <section v-else class="app-page">
       <div class="page-shell">
-        <p class="eyebrow"><span class="eyebrow-mark" /> MODERASI INTERNAL</p>
+
         <header class="page-heading"><h1>Ruang admin</h1><p>Tinjauan dilakukan manusia dan semua keputusan dicatat.</p></header>
         <LoadError v-if="error" message="Ringkasan admin belum bisa dimuat." :retrying="pending" @retry="execute()" />
         <p v-if="pending" class="field-hint" role="status">Memuat ringkasan admin…</p>

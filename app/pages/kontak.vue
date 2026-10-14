@@ -51,7 +51,7 @@ async function sendMessage() {
 
 <template>
   <section class="page-editorial information-page">
-    <div class="page-kicker"><span class="eyebrow-mark"/>BANTUAN DAN DUKUNGAN</div>
+
     <header class="info-intro"><h1>{{ reportingReview ? 'Laporkan informasi.' : 'Mari bicara.' }}</h1><p>Jika ada masalah dengan data, privasi, atau cara kerja KerjaGimana, sampaikan melalui formulir ini.</p></header>
     <p v-if="reportingReview && !validReview" class="form-notice form-notice-error" role="alert">Tautan laporan tidak valid. <NuxtLink to="/perusahaan">Buka perusahaan dan pilih review yang ingin dilaporkan.</NuxtLink></p>
     <p v-else-if="reportingReview && !viewer" class="form-notice"><NuxtLink :to="loginTarget">Masuk untuk melaporkan review ini.</NuxtLink> Setelah masuk, kamu akan kembali ke halaman ini. Untuk pertanyaan umum atau privasi, gunakan <NuxtLink to="/kontak">formulir kontak</NuxtLink>.</p>

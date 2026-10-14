@@ -117,7 +117,7 @@ const backLink = computed(() => route.query.next ? accountDestination(route.quer
 
 <template>
   <section class="form-shell contribution-shell" :aria-labelledby="`contribution-title-${kind}`">
-    <div class="form-kicker"><span class="eyebrow-mark" />{{ isCompany ? 'DIREKTORI PERUSAHAAN' : 'KONTRIBUSI KOMUNITAS' }}</div>
+
     <h1 :id="`contribution-title-${kind}`">{{ title }}</h1>
     <p class="form-intro">{{ description }}</p>
 

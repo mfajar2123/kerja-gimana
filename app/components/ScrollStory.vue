@@ -34,15 +34,19 @@ onBeforeUnmount(() => observer?.disconnect())
 <template>
   <section class="story-section section-pad" aria-labelledby="story-title">
     <div class="story-intro reveal">
-      <span class="eyebrow"><span class="eyebrow-mark" />SEDERHANA CARANYA</span>
+
       <h2 id="story-title">Biar langkah<br>berikutnya <span class="type-red">lebih yakin.</span></h2>
       <p>Informasi untuk bantu kamu menimbang. Pilihan akhirnya tetap milikmu.</p>
     </div>
     <div class="story-layout">
       <div class="story-visual" :class="`story-visual-step-${active + 1}`" aria-hidden="true">
-        <div class="story-index">LANGKAH <span>0{{ active + 1 }}</span> / 03</div>
-        <div class="story-emblem"><component :is="steps[active]?.icon" :size="46" :stroke-width="1.45" /></div>
-        <p class="story-visual-title">{{ steps[active]?.title }}</p>
+
+        <Transition name="story-content" mode="out-in">
+          <div :key="active" class="story-visual-content">
+            <div class="story-emblem"><component :is="steps[active]?.icon" :size="46" :stroke-width="1.45" /></div>
+            <p class="story-visual-title">{{ steps[active]?.title }}</p>
+          </div>
+        </Transition>
         <div class="story-meter"><span :style="{ width: `${((active + 1) / steps.length) * 100}%` }" /></div>
       </div>
       <div class="story-steps">
@@ -57,7 +61,7 @@ onBeforeUnmount(() => observer?.disconnect())
           @mouseenter="active = index"
           @focus="active = index"
         >
-          <span class="story-step-number">{{ step.number }}</span>
+
           <span class="story-step-content"><strong>{{ step.title }}</strong><span>{{ step.body }}</span></span>
           <span class="story-step-rule" />
         </NuxtLink>

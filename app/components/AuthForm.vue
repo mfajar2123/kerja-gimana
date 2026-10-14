@@ -65,7 +65,7 @@ async function submit() {
 
 <template>
   <section class="form-shell" :aria-labelledby="`auth-title-${mode}`">
-    <div class="form-kicker"><span class="eyebrow-mark" />{{ mode === 'register' ? 'BUAT AKUN' : mode === 'login' ? 'SELAMAT DATANG KEMBALI' : 'KEAMANAN AKUN' }}</div>
+
     <h1 :id="`auth-title-${mode}`">{{ title }}</h1>
     <p class="form-intro">{{ description }}</p>
 

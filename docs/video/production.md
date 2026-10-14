@@ -1,0 +1,13 @@
+# Produksi aktif — KerjaGimana / 20 detik dengan audio
+
+Instruksi terbaru dieksekusi: komposisi lebih polos, kamera mengikuti kata/antarbaris lalu membuka kalimat utuh, zoom saat foto berganti, musik/SFX, durasi 20 detik. **Render baru selesai, decode video/audio lulus, frame dan urutan frame terpilih diperiksa.** Render 30 detik tanpa audio tetap sebagai versi sebelumnya, bukan hasil revisi ini.
+
+Sumber aktif: [film.html](../../video/kerjagimana/compositions/film.html), [animation-v2.js](../../video/kerjagimana/animation-v2.js), [style-v2.css](../../video/kerjagimana/style-v2.css). Deliverable: [kerjagimana-horizontal-20s-audio.mp4](../../artifacts/video/kerjagimana-horizontal-20s-audio.mp4), 1920 × 1080 / 16:9 / 30 fps / 600 frame / **20.000 detik**, H.264 + AAC stereo 48 kHz, 8.505.929 byte. Metadata: [render-report-20s.json](../../artifacts/video/render-report-20s.json).
+
+[Poster](../../artifacts/video/poster-20s.png), [frame hasil decode](../../artifacts/video/render-contact-sheet-20s.png), dan filmstrip [word follow](../../artifacts/video/review-20s/word-follow-strip.png), [photo handoff](../../artifacts/video/review-20s/photo-handoff-strip.png), [closing](../../artifacts/video/review-20s/closing-strip.png) diperiksa. Yang terpotong saat close-up adalah kata sebelumnya yang sudah dibaca; focused-word checks memastikan kata aktif utuh, lalu pullback mengembalikan kalimat penuh.
+
+Pemeriksaan sebelum render lulus: dua komposisi, nol lint/runtime/layout error atau warning, tujuh waktu sampel, 22 pemeriksaan kontras. Review terpisah seek 600 posisi, sampling tiap 5 frame / 127 pengecekan elemen pada interval baca, focused-word checks, tiga foto termuat, dan pose maju/mundur konsisten. Snapshot kata aktif, reset baris, full phrase, photo handoff, dan penutup diperiksa.
+
+Mix WAV: stereo 48 kHz, 20.000 detik; measured integrated loudness -16.92 LUFS, true peak -3.05 dBTP, lima cue pendek. **Audio AAC di MP4 final** terverifikasi stereo 48 kHz / 20.000 detik, measured -16.96 LUFS / -3.35 dBTP. Seluruh video/audio berhasil didekode. Ukuran/level ini verifikasi teknis, bukan bukti kualitas timbre atau musical fit. Direct listening tidak tersedia dalam review ini; audio belum diklaim diaudisi. [Manifest](audio-manifest.json) membedakan intent waktu aksen dari pengukuran loudness.
+
+Studio lokal: http://localhost:3002/#project/kerjagimana, server HTTP 200 pada pemeriksaan terakhir. Brand/fonts sama dengan proyek; tiga foto ilustrasi stok umum dan musik/SFX diperoleh dari sumber yang dicatat di [credits](credits.md). Tidak ada VO, angka gaji, rating, data komunitas, AI aktif, atau klaim endorsement baru. Tidak mengubah aplikasi/database atau melakukan publikasi.

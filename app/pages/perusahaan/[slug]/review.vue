@@ -16,7 +16,7 @@ function reportReview(review: PublicReview) { navigateTo({ path: '/kontak', quer
 <template>
   <section v-if="company" class="page-editorial company-data-page">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/perusahaan">Perusahaan</NuxtLink><span>/</span><NuxtLink :to="`/perusahaan/${slug}`">{{ company.name }}</NuxtLink><span>/</span><span aria-current="page">Pengalaman kerja</span></nav>
-    <header class="subpage-intro"><span class="page-kicker"><span class="eyebrow-mark"/>PENGALAMAN KERJA</span><h1>Kerja di <span class="type-red">{{ company.name }}.</span></h1><p>{{ data?.total ?? 0 }} cerita yang telah dimoderasi. Review ditampilkan tanpa nama akun.</p></header>
+    <header class="subpage-intro"><h1>Kerja di <span class="type-red">{{ company.name }}.</span></h1><p>{{ data?.total ?? 0 }} cerita yang telah dimoderasi. Review ditampilkan tanpa nama akun.</p></header>
     <CompanyTabs :slug="slug" />
     <p v-if="error" class="notice notice-error" role="alert">Pengalaman kerja belum dapat dimuat. Coba lagi nanti.</p>
     <p v-else-if="!data?.reviews.length" class="empty-state" tabindex="-1">Belum ada review yang diterbitkan. Cerita yang dikirim akan ditinjau moderator terlebih dahulu.</p>

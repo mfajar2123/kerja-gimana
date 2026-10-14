@@ -72,6 +72,7 @@ const isHome = computed(() => route.path === '/')
         </button>
       </div>
 
+      <Transition name="menu">
       <nav v-if="open" id="mobile-navigation" class="mobile-nav" aria-label="Navigasi seluler">
         <NuxtLink v-for="link in links" :key="link.to" :to="link.to">{{ link.label }}</NuxtLink>
         <template v-if="viewer">
@@ -83,6 +84,7 @@ const isHome = computed(() => route.path === '/')
         <NuxtLink v-else to="/masuk">Masuk ke akun</NuxtLink>
         <NuxtLink v-if="!inAdmin" to="/tulis-review">Tulis review</NuxtLink>
       </nav>
+      </Transition>
     </header>
     <p v-if="actionError" class="account-action-notice" role="alert">{{ actionError }}</p>
 
@@ -110,7 +112,6 @@ const isHome = computed(() => route.path === '/')
       </div>
       <div class="footer-bottom">
         <span>© {{ new Date().getFullYear() }} KerjaGimana</span>
-        <span>Informasi transparan. Keputusan tetap di tanganmu.</span>
       </div>
     </footer>
     <NuxtRouteAnnouncer />

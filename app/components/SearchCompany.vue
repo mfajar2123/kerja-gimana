@@ -61,7 +61,7 @@ onBeforeUnmount(() => { if (timer) clearTimeout(timer) })
 <template>
   <section id="cari" class="discovery-section section-pad" aria-labelledby="discovery-title">
     <div class="discovery-heading reveal">
-      <span class="eyebrow"><span class="eyebrow-mark" />CARI DULU, BARU PUTUSKAN</span>
+
       <h2 id="discovery-title">Lagi kepikiran<br><span class="type-red">perusahaan mana?</span></h2>
       <p>Ketik nama perusahaan untuk melihat informasi yang sudah tersedia.</p>
     </div>

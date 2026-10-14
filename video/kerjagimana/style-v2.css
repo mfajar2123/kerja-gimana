@@ -1,0 +1,15 @@
+@font-face{font-family:Space Grotesk;src:url('assets/space-grotesk.woff2') format('woff2');font-weight:300 700;font-display:block}
+@font-face{font-family:Plus Jakarta Sans;src:url('assets/plus-jakarta-sans.woff2') format('woff2');font-weight:200 800;font-display:block}
+:root{--ink:#000;--paper:#f7f5f2;--red:#f00;--white:#fff}
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:var(--ink);color:var(--white);font-family:Space Grotesk,sans-serif;-webkit-font-smoothing:antialiased}
+#root,#film{position:relative;width:1920px;height:1080px;overflow:hidden}
+.type-scene,.camera,#photos,.photo-scene,#paper,#closing-black{position:absolute;inset:0;width:1920px;height:1080px}
+.camera{transform-origin:0 0}.word{position:absolute;display:block;white-space:nowrap;opacity:0;font-weight:600;letter-spacing:-.06em;line-height:1.08}
+.hook-word{font-size:184px}.question-word{font-size:171px}.photo-word{font-size:142px;letter-spacing:-.055em}.compare-word{font-size:172px}.final-word{font-size:130px;letter-spacing:-.06em}.red{color:var(--red)}
+.photo-scene{overflow:hidden;opacity:0}.photo-scene img{width:1920px;height:1080px;object-fit:cover;object-position:center 56%;transform-origin:68% 60%;filter:saturate(.45);display:block}
+#image-work{object-position:center 65%}#image-interview{object-position:center 50%}.photo-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.78) 46%,rgba(0,0,0,.18) 82%,rgba(0,0,0,.12) 100%)}
+#salary-qualifier{position:absolute;left:170px;top:795px;margin:0;font-family:Plus Jakarta Sans,sans-serif;font-size:31px;font-weight:500;color:#fff;opacity:0}
+#paper{background:var(--paper);opacity:0}#compare{color:var(--ink)}#closing-black{background:#000;opacity:0}
+#brand{position:absolute;left:280px;top:155px;display:flex;align-items:center;gap:17px;font-size:39px;font-weight:700;letter-spacing:-.055em;opacity:0}
+.brand-symbol{display:flex;align-items:center;justify-content:center;width:55px;height:55px;border:1px solid #fff;font-size:38px;padding-right:5px;letter-spacing:-.09em}.brand-symbol span{color:var(--red)}.brand-light{font-weight:400}
+#cta{position:absolute;left:280px;top:850px;font-family:Plus Jakarta Sans,sans-serif;font-size:33px;font-weight:700;opacity:0}#cta span{color:var(--red);margin-left:24px;font-size:42px}

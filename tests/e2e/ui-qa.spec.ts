@@ -3,26 +3,23 @@ import AxeBuilder from '@axe-core/playwright'
 
 test.setTimeout(60_000)
 
-test('hero content, caption, and scroll link stay in separate rows across breakpoints', async ({ page }) => {
+test('simplified hero keeps its heading and actions inside the layout across breakpoints', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   for (const width of [320, 375, 390, 440, 768, 1024, 1440, 1728]) {
     await page.setViewportSize({ width, height: width >= 1024 ? 650 : 740 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
     const content = await page.locator('.hero-content').boundingBox()
-    const bottom = await page.locator('.hero-bottom').boundingBox()
     const hero = await page.locator('.hero-section').boundingBox()
+    const heading = await page.locator('.hero-title').boundingBox()
+    const actions = await page.locator('.hero-actions').boundingBox()
     expect(content).not.toBeNull()
-    expect(bottom).not.toBeNull()
     expect(hero).not.toBeNull()
-    expect(content!.y + content!.height, `${width}px hero content collides with footer`).toBeLessThanOrEqual(bottom!.y)
-    expect(bottom!.y + bottom!.height, `${width}px footer is clipped`).toBeLessThanOrEqual(hero!.y + hero!.height)
-    if (width > 900) {
-      const caption = await page.locator('.hero-caption').boundingBox()
-      const discover = await page.locator('.hero-discover').boundingBox()
-      expect(caption!.x).toBeGreaterThanOrEqual(discover!.x + discover!.width)
-      expect(caption!.x + caption!.width).toBeLessThanOrEqual(width)
-    }
+    expect(heading!.y + heading!.height, `${width}px heading overlaps actions`).toBeLessThanOrEqual(actions!.y)
+    expect(content!.y).toBeGreaterThanOrEqual(hero!.y)
+    expect(content!.y + content!.height, `${width}px content is clipped`).toBeLessThanOrEqual(hero!.y + hero!.height)
+    expect(actions!.x).toBeGreaterThanOrEqual(18)
+    expect(actions!.x + actions!.width).toBeLessThanOrEqual(width - 18)
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width)
   }
 })
@@ -65,6 +62,38 @@ test('scroll reveals every home section and FAQ works with the keyboard', async 
   await expect(question).toHaveAttribute('open', '')
   await expect(question.locator('p')).toBeVisible()
   expect(errors).toEqual([])
+})
+
+test('content stays readable without JavaScript and after enabling reduced motion', async ({ page, browser }) => {
+  await page.addInitScript(() => {
+    const animate = Element.prototype.animate
+    Element.prototype.animate = function (keyframes, options) {
+      const animation = animate.call(this, keyframes, options)
+      animation.pause()
+      return animation
+    }
+  })
+  await page.goto('/')
+  await page.waitForLoadState('networkidle')
+  await page.locator('#kompas-ai').scrollIntoViewIfNeeded()
+  await expect.poll(() => page.locator('#kompas-ai .reveal').evaluate(element => {
+    return element.getAnimations().some(animation => animation.playState === 'paused')
+  })).toBe(true)
+  await expect(page.locator('#kompas-ai .reveal')).toHaveCSS('opacity', '1')
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(page.locator('#ai-preview-title')).toBeVisible()
+  await expect.poll(() => page.locator('main').evaluate(element => element.getAnimations({ subtree: true }).filter(animation => ['running', 'paused'].includes(animation.playState)).length)).toBe(0)
+
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } })
+  try {
+    const staticPage = await context.newPage()
+    await staticPage.goto('http://localhost:3000/')
+    await expect(staticPage.getByRole('heading', { level: 1 })).toBeVisible()
+    const preview = staticPage.locator('#kompas-ai')
+    await preview.scrollIntoViewIfNeeded()
+    await expect(preview).toContainText('Coming soon')
+    await expect(preview.locator('.reveal')).toHaveCSS('opacity', '1')
+  } finally { await context.close() }
 })
 
 test('invalid registration is caught before contacting the unavailable backend', async ({ page }) => {

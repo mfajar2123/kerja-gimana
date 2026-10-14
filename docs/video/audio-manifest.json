@@ -1,0 +1,81 @@
+{
+  "duration": 20,
+  "sampleRate": 48000,
+  "channels": 2,
+  "voiceover": false,
+  "music": {
+    "title": "Tech House vibes",
+    "artist": "Alejandro Magaña (A. M.)",
+    "source": "https://mixkit.co/free-stock-music/electronica/",
+    "download": "https://assets.mixkit.co/music/130/130.mp3",
+    "license": "https://mixkit.co/license/modal/musicFree/",
+    "sourceTrim": [
+      8,
+      28
+    ],
+    "path": "assets/revision-20s/music-bed.wav"
+  },
+  "cues": [
+    {
+      "id": "row-reset",
+      "file": "sweep.wav",
+      "start": 2.63,
+      "visualPeak": 2.92,
+      "role": "Camera reset to second question line"
+    },
+    {
+      "id": "photo-to-salary",
+      "file": "zoom.wav",
+      "start": 7.17,
+      "visualPeak": 7.46,
+      "role": "Zoom into first photo and reveal next photo"
+    },
+    {
+      "id": "photo-to-interview",
+      "file": "sweep.wav",
+      "start": 9.92,
+      "visualPeak": 10.21,
+      "role": "Second photo handoff"
+    },
+    {
+      "id": "context-pullback",
+      "file": "zoom.wav",
+      "start": 12.74,
+      "visualPeak": 13.03,
+      "role": "Photo opens to the comparison message"
+    },
+    {
+      "id": "closing-pullback",
+      "file": "sweep.wav",
+      "start": 17.33,
+      "visualPeak": 17.62,
+      "role": "Whole closing phrase settles"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Fast small sweep transition",
+      "url": "https://assets.mixkit.co/active_storage/sfx/166/166.wav",
+      "license": "https://mixkit.co/license/modal/sfxFree/"
+    },
+    {
+      "title": "Air zoom vacuum",
+      "url": "https://assets.mixkit.co/active_storage/sfx/2608/2608.wav",
+      "license": "https://mixkit.co/license/modal/sfxFree/"
+    }
+  ],
+  "loudness": {
+    "input_i": "-16.92",
+    "input_tp": "-3.05",
+    "input_lra": "2.80",
+    "input_thresh": "-27.13",
+    "output_i": "-16.97",
+    "output_tp": "-3.41",
+    "output_lra": "1.60",
+    "output_thresh": "-27.10",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.03"
+  },
+  "audibleReview": "Not yet auditioned; timings and levels are proposed and technically measured.",
+  "renderedDuration": "20.000000"
+}

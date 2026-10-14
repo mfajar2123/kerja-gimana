@@ -24,7 +24,7 @@ useSeoMeta({ title: () => `${title.value} — KerjaGimana`, robots: 'noindex,nof
 <template>
   <NuxtLayout>
     <section class="form-shell error-page" aria-labelledby="error-title">
-      <p class="form-kicker"><span class="eyebrow-mark" />{{ error.statusCode }}</p>
+
       <h1 id="error-title">{{ title }}</h1>
       <p class="form-intro">{{ explanation }}</p>
       <template v-if="error.statusCode === 403 && viewer">

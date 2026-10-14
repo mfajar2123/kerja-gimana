@@ -56,7 +56,7 @@ function changePage(page: number) {
 
 <template>
   <section class="page-editorial directory-page">
-    <div class="page-kicker"><span class="eyebrow-mark" />DIREKTORI PERUSAHAAN</div>
+
     <div class="directory-intro">
       <div><h1>Cari tahu<br><span class="type-red">sebelum memilih.</span></h1><p>Cari perusahaan untuk melihat pengalaman kerja dan informasi yang tersedia.</p></div>
       <NuxtLink class="text-link" to="/perusahaan/usulkan">Belum ada perusahaan? Usulkan <ArrowRight :size="16" aria-hidden="true" /></NuxtLink>

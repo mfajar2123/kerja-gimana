@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>KerjaGimana — Cari tahu dulu</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="assets/gsap.min.js"></script>
+</head>
+<body>
+  <main id="root" data-composition-id="kerjagimana-horizontal" data-start="0" data-duration="30" data-width="1920" data-height="1080">
+    <div id="film">
+      <div id="paper"></div>
+      <div id="opening-accent"></div>
+      <div id="opening-context"><span class="tiny">SEBELUM KAMU KIRIM LAMARAN</span><div class="context-line"></div><span class="tiny">KG / 01</span></div>
+
+      <div id="intro-rig" class="camera-rig">
+        <h1 id="intro" class="hero-heading"><span id="intro-one" data-readable>Kerja</span> <span id="intro-two" data-readable>di sana.</span></h1>
+      </div>
+      <div id="question-rig" class="camera-rig">
+        <h1 id="question" class="hero-heading"><span id="question-one" data-readable>Yakin udah</span><br><span id="question-two" class="red" data-readable>tahu</span> <span id="question-three" data-readable>dalemnya?</span></h1>
+      </div>
+      <div id="shared-line"></div>
+
+      <div id="product-brand" class="brand"><span class="brand-symbol">K<span>.</span></span><span>kerja<span class="brand-light">gimana</span></span></div>
+      <div id="product-footer"><span>INFORMASI YANG TERSEDIA, BUKAN JANJI</span><span>CARI TAHU DULU ↗</span></div>
+      <div id="demo-label"><span class="demo-dot"></span>DEMO · DATA FIKTIF <span class="demo-detail">/ ILUSTRASI TAMPILAN</span></div>
+
+      <section id="search-copy" class="product-copy">
+        <div class="eyebrow">01 / MULAI DARI NAMANYA</div>
+        <h2 data-readable>Cari<br>perusahaannya<span class="red">.</span></h2>
+        <div class="short-rule"></div>
+      </section>
+      <section id="review-copy" class="product-copy">
+        <div class="eyebrow">02 / LIHAT DARI DALAM</div>
+        <h2 data-readable>Baca<br>pengalaman<br>kerja<span class="red">.</span></h2>
+        <p id="review-note" class="support-note" data-readable>Kontribusi melewati moderasi.</p>
+      </section>
+      <section id="salary-copy" class="product-copy">
+        <div class="eyebrow">03 / INFORMASI DENGAN KONTEKS</div>
+        <h2 data-readable>Lihat<br>ringkasan<br>gaji<span class="red">.</span></h2>
+        <p id="salary-note" class="support-note" data-readable>Minimal 5 pelapor unik<br>per kelompok.</p>
+      </section>
+      <section id="interview-copy" class="product-copy">
+        <div class="eyebrow">04 / SEBELUM INTERVIEW</div>
+        <h2 data-readable>Kenali<br>proses<br>interview<span class="red">.</span></h2>
+        <p id="interview-note" class="support-note" data-readable>Cerita dari pelamar sebelumnya.</p>
+      </section>
+      <section id="compare-copy" class="product-copy">
+        <div class="eyebrow">05 / PERTIMBANGKAN PILIHANMU</div>
+        <h2 data-readable>Bandingkan<br>sebelum<br>memilih<span class="red">.</span></h2>
+        <p id="compare-note" class="support-note" data-readable>Berdasarkan informasi<br>yang tersedia.</p>
+      </section>
+
+      <div id="search-field"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.1"/><path d="m16 16 5 5"/></svg><span id="query"></span><span id="typing-caret"></span><span class="search-arrow">↗</span></div>
+      <div id="company-rig">
+        <div id="company-header">
+          <div id="company-initial">A</div>
+          <div><div class="company-demo">DEMO —</div><h3 data-readable>Aurora Teknologi</h3><p>Teknologi · Jakarta</p></div>
+          <span id="result-arrow">↗</span>
+        </div>
+        <div id="profile-details">
+          <div class="profile-rule"></div>
+          <div id="tabs"><span id="tab-review">Pengalaman kerja</span><span id="tab-salary">Informasi gaji</span><span id="tab-interview">Interview</span><div id="tab-underline"></div></div>
+          <div id="panel-viewport">
+            <div id="review-panel" class="data-panel">
+              <div class="panel-index">PENGALAMAN KARYAWAN / DEMO</div>
+              <div class="review-row"><span class="row-symbol">+</span><div><h4 data-readable>Kelebihan</h4><p data-readable>Tim saling membantu.<br>Dokumentasi tersedia.</p></div></div>
+              <div class="review-row"><span class="row-symbol neutral">↗</span><div><h4 data-readable>Hal yang bisa ditingkatkan</h4><p data-readable>Koordinasi lintas tim<br>dan kejelasan prioritas.</p></div></div>
+            </div>
+            <div id="salary-panel" class="data-panel">
+              <div class="panel-index">RINGKASAN GAJI / DEMO</div>
+              <h4 data-readable>Analis Data DEMO</h4>
+              <p class="salary-meta">Jakarta · Penuh waktu · Menengah</p>
+              <div class="salary-figure"><span data-readable>Median per bulan · Gross</span><strong data-readable>Rp10.000.000</strong></div>
+              <div class="salary-foot"><span>Gaji pokok, tanpa tunjangan dan bonus</span><span>≥ 5 pelapor unik</span></div>
+            </div>
+            <div id="interview-panel" class="data-panel">
+              <div class="panel-index">CONTOH PENGALAMAN PELAMAR / DEMO</div>
+              <div class="interview-labels"><h4 data-readable>Tahapan</h4><span data-readable>Durasi: 14 hari</span></div>
+              <ol class="interview-stages"><li><span>01</span><strong data-readable>Seleksi dokumen</strong></li><li><span>02</span><strong data-readable>Diskusi awal</strong></li><li><span>03</span><strong data-readable>Studi kasus</strong></li><li><span>04</span><strong data-readable>Pembahasan bersama tim</strong></li></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="comparison-rig">
+        <div id="comparison-grid">
+          <div class="compare-column" id="compare-aurora"><div class="compare-name"><span>DEMO —</span><h3 data-readable>Aurora<br>Teknologi</h3></div><div class="compare-metric"><span data-readable>Keseimbangan hidup</span><strong data-readable>3,4 <small>/ 5</small></strong></div><div class="compare-metric"><span data-readable>Peluang berkembang</span><strong data-readable>4,0 <small>/ 5</small></strong></div></div>
+          <div id="comparison-divider"></div>
+          <div class="compare-column" id="compare-lentera"><div class="compare-name"><span>DEMO —</span><h3 data-readable>Lentera<br>Kreatif</h3></div><div class="compare-metric"><span data-readable>Keseimbangan hidup</span><strong data-readable>3,7 <small>/ 5</small></strong></div><div class="compare-metric"><span data-readable>Peluang berkembang</span><strong data-readable>4,0 <small>/ 5</small></strong></div></div>
+        </div>
+      </div>
+
+      <div id="closing-wipe" data-layout-ignore></div>
+      <div id="closing-rig" class="camera-rig">
+        <h1 id="closing" class="closing-heading"><span id="closing-one" data-readable>Sebelum kerja di sana,</span><br><span id="closing-two" data-readable>cari <span class="red">tahu</span> dulu.</span></h1>
+      </div>
+      <div id="closing-brand" class="brand"><span class="brand-symbol">K<span>.</span></span><span>kerja<span class="brand-light">gimana</span></span></div>
+      <div id="closing-button" data-readable>Cari perusahaan <svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></svg></div>
+      <div id="closing-footer"><span>INFORMASI TRANSPARAN.</span><span>KEPUTUSAN TETAP DI TANGANMU.</span></div>
+    </div>
+  </main>
+  <script src="animation.js"></script>
+</body>
+</html>

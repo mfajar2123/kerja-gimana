@@ -65,8 +65,8 @@ test('AI concept is clearly coming soon, accessible and responsive, with only a 
   await page.waitForLoadState('networkidle')
   const section = page.locator('#kompas-ai')
   await expect(section).toContainText('Coming soon')
-  await expect(section).toContainText('Belum tersedia')
-  await expect(section).toContainText('Contoh pertanyaan, bukan percakapan AI aktif.')
+  await expect(section).toContainText('belum tersedia')
+  await expect(section).toContainText('rujukan ke sumber informasi')
   await expect(section.locator('input, textarea, button')).toHaveCount(0)
   await mkdir('artifacts/launch-qa', { recursive: true })
   for (const width of [320, 390, 768, 1440]) {

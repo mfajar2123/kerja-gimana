@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>KerjaGimana — Cari tahu dulu / 20s</title><link rel="stylesheet" href="../style-v2.css"><script src="../assets/gsap.min.js"></script></head>
+<body>
+  <main id="root" data-composition-id="kerjagimana-horizontal" data-start="0" data-duration="20" data-width="1920" data-height="1080">
+    <div id="film">
+      <section id="hook" class="type-scene"><div id="hook-camera" class="camera">
+        <span id="h-kerja" class="word hook-word" style="left:500px;top:290px">Kerja</span>
+        <span id="h-di" class="word hook-word" style="left:500px;top:505px">di</span>
+        <span id="h-sana" class="word hook-word" style="left:680px;top:505px">sana.</span>
+      </div></section>
+      <section id="question" class="type-scene"><div id="question-camera" class="camera">
+        <span id="q-yakin" class="word question-word" style="left:280px;top:245px">Yakin</span>
+        <span id="q-udah" class="word question-word" style="left:720px;top:245px">udah</span>
+        <span id="q-tahu" class="word question-word red" style="left:280px;top:480px">tahu</span>
+        <span id="q-dalem" class="word question-word" style="left:670px;top:480px">dalemnya?</span>
+      </div></section>
+      <section id="photos" data-layout-ignore>
+        <div id="photo-work" class="photo-scene"><img id="image-work" src="../assets/revision-20s/work.jpg" alt="Ilustrasi rekan kerja berkolaborasi"><div class="photo-shade"></div></div>
+        <div id="photo-salary" class="photo-scene"><img id="image-salary" src="../assets/revision-20s/salary.jpg" alt="Ilustrasi menghitung informasi keuangan"><div class="photo-shade"></div></div>
+        <div id="photo-interview" class="photo-scene"><img id="image-interview" src="../assets/revision-20s/interview.jpg" alt="Ilustrasi percakapan interview"><div class="photo-shade"></div></div>
+      </section>
+      <div id="work-camera" class="camera">
+        <span id="p-work-one" class="word photo-word" style="left:160px;top:415px">Pengalaman</span>
+        <span id="p-work-two" class="word photo-word" style="left:160px;top:590px">kerja.</span>
+      </div>
+      <div id="salary-camera" class="camera">
+        <span id="p-salary-one" class="word photo-word" style="left:160px;top:400px">Ringkasan</span>
+        <span id="p-salary-two" class="word photo-word" style="left:160px;top:575px">gaji.</span>
+      </div>
+      <p id="salary-qualifier">Saat data mencukupi.</p>
+      <div id="interview-camera" class="camera">
+        <span id="p-interview-one" class="word photo-word" style="left:160px;top:420px">Proses</span>
+        <span id="p-interview-two" class="word photo-word" style="left:160px;top:595px">interview.</span>
+      </div>
+      <div id="paper" data-layout-ignore></div>
+      <section id="compare" class="type-scene"><div id="compare-camera" class="camera">
+        <span id="c-bandingkan" class="word compare-word" style="left:250px;top:270px">Bandingkan</span>
+        <span id="c-sebelum" class="word compare-word" style="left:250px;top:505px">sebelum</span>
+        <span id="c-memilih" class="word compare-word" style="left:930px;top:505px">memilih.</span>
+      </div></section>
+      <div id="closing-black" data-layout-ignore></div>
+      <section id="closing" class="type-scene"><div id="closing-camera" class="camera">
+        <span id="f-sebelum" class="word final-word" style="left:280px;top:320px">Sebelum</span>
+        <span id="f-kerja" class="word final-word" style="left:795px;top:320px">kerja</span>
+        <span id="f-disana" class="word final-word" style="left:1095px;top:320px">di sana,</span>
+        <span id="f-cari" class="word final-word" style="left:280px;top:565px">cari</span>
+        <span id="f-tahu" class="word final-word red" style="left:525px;top:565px">tahu</span>
+        <span id="f-dulu" class="word final-word" style="left:830px;top:565px">dulu.</span>
+      </div></section>
+      <div id="brand"><span class="brand-symbol">K<span>.</span></span><span>kerja<span class="brand-light">gimana</span></span></div>
+      <div id="cta">Cari perusahaan <span>↗</span></div>
+    </div>
+  </main>
+  <script>
+/* World point p maps to screen a by a - scale*p. Word reveals are local;
+   camera movement is authored independently and deterministic under seeking. */
+const tl = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } })
+const shot = (cx, cy, scale, ax = 760, ay = 520) => ({ x: ax - scale * cx, y: ay - scale * cy, scale })
+const move = (target, pose, at, duration, ease = 'power2.inOut') => tl.to(target, { ...pose, duration, ease }, at)
+const setupCamera = (target, pose, at) => tl.fromTo(target, pose, { ...pose, duration: 0.001, immediateRender: false }, at)
+const word = (target, at, duration = 0.27) => tl.fromTo(target, { opacity: 0, y: 16, filter: 'blur(3px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration, immediateRender: false }, at)
+const clear = (target, at, duration = 0.2) => tl.to(target, { opacity: 0, y: -16, filter: 'blur(3px)', duration, ease: 'power2.in' }, at)
+const wide = { x: 0, y: 0, scale: 1 }
+
+setupCamera('#hook-camera', shot(730, 405, 1.6, 750, 500), 0)
+word('#h-kerja', 0)
+move('#hook-camera', shot(585, 610, 1.6, 750, 500), 0.38, 0.34)
+word('#h-di', 0.50)
+word('#h-sana', 0.67)
+move('#hook-camera', shot(915, 610, 1.6, 960, 500), 0.74, 0.30)
+move('#hook-camera', wide, 1.04, 0.32)
+clear('#hook', 1.50, 0.20)
+
+setupCamera('#question-camera', shot(510, 345, 1.45, 750, 480), 1.70)
+word('#q-yakin', 1.70)
+word('#q-udah', 2.05)
+move('#question-camera', shot(909, 338, 1.45, 1040, 480), 1.99, 0.52)
+move('#question-camera', shot(455, 580, 1.45, 720, 535), 2.70, 0.43)
+word('#q-tahu', 2.86)
+word('#q-dalem', 3.15)
+move('#question-camera', shot(1075, 573, 1.45, 1060, 535), 3.12, 0.50)
+move('#question-camera', wide, 3.67, 0.50)
+clear('#question', 4.75, 0.25)
+
+// A close crop opens to context, gently drifts, then pushes into the next photo.
+function photograph(scene, image, start, end, fromX = 0, toX = -25) {
+  tl.fromTo(scene, { opacity: 0 }, { opacity: 1, duration: 0.20, immediateRender: false }, start)
+  tl.fromTo(image, { scale: 1.42, x: fromX, filter: 'saturate(.45) blur(4px)' }, { scale: 1.08, x: 0, filter: 'saturate(.45) blur(0px)', duration: 0.52, immediateRender: false }, start)
+  move(image, { scale: 1.03, x: toX }, start + 0.52, end - start - 0.95, 'none')
+  move(image, { scale: 1.40, x: -toX }, end - 0.43, 0.43, 'power2.in')
+  move(scene, { opacity: 0 }, end - 0.12, 0.16)
+}
+photograph('#photo-work', '#image-work', 5.0, 7.50, 50, -25)
+photograph('#photo-salary', '#image-salary', 7.38, 10.20, -40, 24)
+photograph('#photo-interview', '#image-interview', 10.08, 13.10, 35, -18)
+
+function feature(camera, first, second, start, firstCenter, secondCenter, leave) {
+  setupCamera(camera, shot(...firstCenter, 1.20, 680, 530), start)
+  word(first, start + 0.08)
+  move(camera, shot(...secondCenter, 1.20, 680, 530), start + 0.40, 0.36)
+  word(second, start + 0.48)
+  move(camera, wide, start + 0.88, 0.35)
+  clear(first, leave, 0.19)
+  clear(second, leave, 0.19)
+}
+feature('#work-camera', '#p-work-one', '#p-work-two', 5.10, [555, 500], [355, 680], 7.08)
+feature('#salary-camera', '#p-salary-one', '#p-salary-two', 7.55, [485, 485], [300, 665], 9.78)
+word('#salary-qualifier', 8.80, 0.25)
+clear('#salary-qualifier', 9.78, 0.19)
+feature('#interview-camera', '#p-interview-one', '#p-interview-two', 10.26, [390, 505], [490, 680], 12.66)
+
+move('#paper', { opacity: 1 }, 13.02, 0.20)
+setupCamera('#compare-camera', shot(755, 370, 1.32, 820, 490), 13.10)
+word('#c-bandingkan', 13.10)
+move('#compare-camera', shot(580, 600, 1.32, 680, 545), 13.50, 0.38)
+word('#c-sebelum', 13.62)
+word('#c-memilih', 13.85)
+move('#compare-camera', shot(1231, 598, 1.32, 1060, 545), 13.80, 0.45)
+move('#compare-camera', wide, 14.28, 0.35)
+clear('#compare', 15.06, 0.20)
+
+move('#closing-black', { opacity: 1 }, 15.23, 0.18)
+setupCamera('#closing-camera', shot(550, 398, 1.33, 720, 490), 15.30)
+word('#f-sebelum', 15.32)
+word('#f-kerja', 15.55)
+word('#f-disana', 15.78)
+move('#closing-camera', shot(1306, 390, 1.33, 1090, 490), 15.50, 0.70)
+move('#closing-camera', shot(410, 644, 1.33, 650, 535), 16.34, 0.38)
+word('#f-cari', 16.48)
+word('#f-tahu', 16.71)
+word('#f-dulu', 16.94)
+move('#closing-camera', shot(968, 635, 1.33, 970, 535), 16.72, 0.58)
+move('#closing-camera', wide, 17.37, 0.46)
+word('#brand', 18.0, 0.25)
+word('#cta', 18.15, 0.30)
+tl.to('#film', { opacity: 1, duration: 1.55 }, 18.45)
+window.__timelines = window.__timelines || {}
+window.__timelines['kerjagimana-horizontal'] = tl
+window.videoTimeline = tl
+window.videoReady = document.fonts.ready
+
+</script>
+</body>
+</html>

@@ -51,7 +51,7 @@ useSeoMeta({ title: () => `${content.value?.kicker} — KerjaGimana`, descriptio
 
 <template>
   <article v-if="content" class="page-editorial information-page">
-    <div class="page-kicker"><span class="eyebrow-mark"/>{{ content.kicker }}</div>
+
     <header class="info-intro"><h1>{{ content.title }}</h1></header>
     <p v-if="content.note" class="legal-draft-notice">{{ content.note }}</p>
     <div class="info-prose"><p v-for="(paragraph,index) in content.paragraphs" :key="index">{{ paragraph }}</p></div>

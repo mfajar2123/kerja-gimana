@@ -28,7 +28,7 @@ const comparisonMetrics = [
 </script>
 <template>
   <section class="page-editorial compare-page">
-    <div class="page-kicker"><span class="eyebrow-mark"/>BANDINGKAN DULU</div>
+
     <header class="directory-intro"><div><h1>Dua pilihan.<br><span class="type-red">Lihat lebih jelas.</span></h1><p>Pilih dua atau tiga perusahaan. Setiap angka diambil dari informasi yang sudah tersedia.</p></div><span class="compare-count">{{ ids.length }} / 3 dipilih</span></header>
     <div class="compare-search"><label for="compare-search">Cari perusahaan</label><input id="compare-search" v-model="query" type="search" maxlength="100" placeholder="Ketik nama perusahaan"></div>
     <div v-if="selectedCompanies.length" class="compare-selection" role="group" aria-label="Perusahaan yang dipilih">

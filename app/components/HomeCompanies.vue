@@ -26,15 +26,15 @@ onBeforeUnmount(() => observer?.disconnect())
 <template>
   <section ref="section" class="featured-section section-pad" aria-labelledby="featured-title">
     <div class="featured-header reveal">
-      <div><span class="eyebrow"><span class="eyebrow-mark" />JELAJAHI DIREKTORI</span><h2 id="featured-title">Mulai dari<br>perusahaan <span class="type-red">pilihanmu.</span></h2></div>
+      <div><h2 id="featured-title">Mulai dari<br>perusahaan <span class="type-red">pilihanmu.</span></h2></div>
       <NuxtLink class="text-link" to="/perusahaan">Jelajahi direktori <ArrowRight :size="17" aria-hidden="true" /></NuxtLink>
     </div>
     <div class="featured-data reveal" :aria-busy="pending">
       <p v-if="!directory && !error" class="featured-empty" role="status">Memuat perusahaan…</p>
       <div v-else-if="error" class="featured-empty" role="alert"><p>Daftar perusahaan belum dapat dimuat.</p><button type="button" class="button button-outline" :disabled="pending" @click="load">{{ pending ? 'Memuat…' : 'Coba lagi' }}</button></div>
       <div v-else-if="featuredCompanies.length" class="featured-list">
-        <NuxtLink v-for="(company, index) in featuredCompanies" :key="company.id" :to="`/perusahaan/${company.slug}`" class="featured-row">
-          <span class="featured-no">0{{ index + 1 }}</span><span class="featured-initial" aria-hidden="true">{{ company.name.charAt(0).toUpperCase() }}</span>
+        <NuxtLink v-for="company in featuredCompanies" :key="company.id" :to="`/perusahaan/${company.slug}`" class="featured-row">
+          <span class="featured-initial" aria-hidden="true">{{ company.name.charAt(0).toUpperCase() }}</span>
           <span class="featured-meta"><strong>{{ company.name }}</strong><small>{{ company.industry }}<template v-if="company.location"> · {{ company.location }}</template></small></span>
           <span class="featured-score"><strong>{{ company.ratings.overall === null ? '—' : company.ratings.overall }}</strong><small>{{ company.review_count ? `${company.review_count} review` : 'Belum ada review' }}</small></span>
           <ArrowUpRight :size="19" aria-hidden="true" />

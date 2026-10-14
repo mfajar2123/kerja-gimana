@@ -12,7 +12,7 @@ useSeoMeta({ title: () => `Proses interview ${company.value?.name ?? 'perusahaan
 <template>
   <section v-if="company" class="page-editorial company-data-page">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/perusahaan">Perusahaan</NuxtLink><span>/</span><NuxtLink :to="`/perusahaan/${slug}`">{{ company.name }}</NuxtLink><span>/</span><span aria-current="page">Interview</span></nav>
-    <header class="subpage-intro"><span class="page-kicker"><span class="eyebrow-mark"/>CERITA PELAMAR</span><h1>Interview di <span class="type-red">{{ company.name }}.</span></h1><p>{{ data?.total ?? 0 }} cerita yang sudah dimoderasi. Nama dan akun pengguna tidak ditampilkan.</p></header>
+    <header class="subpage-intro"><h1>Interview di <span class="type-red">{{ company.name }}.</span></h1><p>{{ data?.total ?? 0 }} cerita yang sudah dimoderasi. Nama dan akun pengguna tidak ditampilkan.</p></header>
     <CompanyTabs :slug="slug" />
     <p v-if="error" class="notice notice-error" role="alert">Cerita interview belum dapat dimuat. Coba lagi nanti.</p>
     <p v-else-if="!data?.interviews.length" class="empty-state" tabindex="-1">Belum ada cerita interview yang dapat ditampilkan.</p>

@@ -10,7 +10,7 @@ useSeoMeta({ title: () => `Ringkasan gaji ${company.value?.name ?? 'perusahaan'}
 <template>
   <section v-if="company" class="page-editorial company-data-page">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/perusahaan">Perusahaan</NuxtLink><span>/</span><NuxtLink :to="`/perusahaan/${slug}`">{{ company.name }}</NuxtLink><span>/</span><span aria-current="page">Informasi gaji</span></nav>
-    <header class="subpage-intro"><span class="page-kicker"><span class="eyebrow-mark"/>RINGKASAN DENGAN PRIVASI</span><h1>Gaji di <span class="type-red">{{ company.name }}.</span></h1><p>Angka ditampilkan sebagai median per bulan. Gross dan take home pay dihitung terpisah.</p></header>
+    <header class="subpage-intro"><h1>Gaji di <span class="type-red">{{ company.name }}.</span></h1><p>Angka ditampilkan sebagai median per bulan. Gross dan take home pay dihitung terpisah.</p></header>
     <CompanyTabs :slug="slug" />
     <p class="field-privacy-note">Hanya kelompok dengan setidaknya lima pelapor unik yang ditampilkan. Rentang sampel dibulatkan untuk membantu menjaga privasi.</p>
     <div v-if="error" class="form-notice form-notice-error" role="alert"><p>Ringkasan gaji belum bisa dimuat. Coba lagi untuk melihat data yang tersedia.</p><button type="button" class="button button-outline button-small" :disabled="pending" @click="refresh()">Coba lagi</button></div>

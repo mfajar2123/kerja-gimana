@@ -25,7 +25,7 @@ const ratings = computed(() => [
     <nav class="breadcrumbs" aria-label="Breadcrumb"><NuxtLink to="/perusahaan">Perusahaan</NuxtLink><span aria-hidden="true">/</span><span aria-current="page">{{ company.name }}</span></nav>
     <header class="company-hero-detail">
       <div class="company-detail-mark" aria-hidden="true">{{ company.name.slice(0, 1) }}</div>
-      <div class="company-heading"><span class="page-kicker"><span class="eyebrow-mark" />{{ company.industry }}</span><h1>{{ company.name }}</h1><p><MapPin :size="15" aria-hidden="true"/> {{ company.location || 'Lokasi belum tercatat' }}<span v-if="company.verified" class="verification-pill">DIVERIFIKASI</span></p></div>
+      <div class="company-heading"><p class="company-industry">{{ company.industry }}</p><h1>{{ company.name }}</h1><p><MapPin :size="15" aria-hidden="true"/> {{ company.location || 'Lokasi belum tercatat' }}<span v-if="company.verified" class="verification-pill">DIVERIFIKASI</span></p></div>
       <a v-if="company.website" class="text-link" :href="company.website" target="_blank" rel="noopener noreferrer">Website resmi <ArrowUpRight :size="16" aria-hidden="true" /></a>
     </header>
     <p class="company-description">{{ company.description }}</p>
@@ -38,6 +38,6 @@ const ratings = computed(() => [
     <CompanyTabs :slug="company.slug" />
 
     <section class="company-next-steps"><h2>Cari tahu lebih lanjut.</h2><p>Periksa informasi yang tersedia. Jika belum ada cukup data, kami akan menampilkannya apa adanya.</p><div class="company-next-links"><NuxtLink :to="`/perusahaan/${company.slug}/review`">Baca pengalaman kerja</NuxtLink><NuxtLink :to="`/perusahaan/${company.slug}/gaji`">Lihat ringkasan gaji</NuxtLink><NuxtLink :to="`/perusahaan/${company.slug}/interview`">Lihat cerita interview</NuxtLink></div></section>
-    <aside class="contribution-prompt"><span class="eyebrow"><span class="eyebrow-mark" />PERNAH BEKERJA DI SINI?</span><h2>Pengalamanmu bisa melengkapi ceritanya.</h2><NuxtLink class="button button-red" :to="`/tulis-review?company=${company.id}`">Tulis review</NuxtLink></aside>
+    <aside class="contribution-prompt"><h2>Pengalamanmu bisa melengkapi ceritanya.</h2><NuxtLink class="button button-red" :to="`/tulis-review?company=${company.id}`">Tulis review</NuxtLink></aside>
   </article>
 </template>
