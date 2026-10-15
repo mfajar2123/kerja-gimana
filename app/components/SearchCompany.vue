@@ -63,7 +63,7 @@ onBeforeUnmount(() => { if (timer) clearTimeout(timer) })
     <div class="discovery-heading reveal">
 
       <h2 id="discovery-title">Lagi kepikiran<br><span class="type-red">perusahaan mana?</span></h2>
-      <p>Ketik nama perusahaan untuk melihat informasi yang sudah tersedia.</p>
+      <TypewriterDesc text="Ketik nama perusahaan untuk melihat informasi yang sudah tersedia." />
     </div>
 
     <div class="discovery-search-block reveal" @focusout="closeOnFocusOut">

@@ -36,7 +36,7 @@ onBeforeUnmount(() => observer?.disconnect())
     <div class="story-intro reveal">
 
       <h2 id="story-title">Biar langkah<br>berikutnya <span class="type-red">lebih yakin.</span></h2>
-      <p>Informasi untuk bantu kamu menimbang. Pilihan akhirnya tetap milikmu.</p>
+      <TypewriterDesc text="Informasi untuk bantu kamu menimbang. Pilihan akhirnya tetap milikmu." />
     </div>
     <div class="story-layout">
       <div class="story-visual" :class="`story-visual-step-${active + 1}`" aria-hidden="true">
