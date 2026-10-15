@@ -1,14 +1,9 @@
 {
-  "duration": 30,
+  "duration": 20,
   "assertions": [
-    { "kind": "appearsBy", "selector": "#intro-one", "bySec": 0.4 },
-    { "kind": "appearsBy", "selector": "#question-three", "bySec": 3.6 },
-    { "kind": "appearsBy", "selector": "#company-header", "bySec": 7.6 },
-    { "kind": "appearsBy", "selector": "#salary-panel", "bySec": 14.0 },
-    { "kind": "appearsBy", "selector": "#compare-lentera", "bySec": 21.8 },
-    { "kind": "appearsBy", "selector": "#closing-button", "bySec": 27.1 },
-    { "kind": "staysInFrame", "selector": "#intro-one" },
-    { "kind": "staysInFrame", "selector": "#question-three" },
-    { "kind": "staysInFrame", "selector": "#closing-button" }
+    { "kind": "appearsBy", "selector": "#h-kerja", "bySec": 0.4 },
+    { "kind": "appearsBy", "selector": "#brand", "bySec": 18.3 },
+    { "kind": "appearsBy", "selector": "#domain", "bySec": 18.45 },
+    { "kind": "staysInFrame", "selector": "#domain" }
   ]
 }

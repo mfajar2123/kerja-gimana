@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import ffprobe from '@ffprobe-installer/ffprobe'
 
 const cwd = dirname(fileURLToPath(import.meta.url))
-const output = fileURLToPath(new URL('../../artifacts/video/kerjagimana-horizontal-20s-audio.mp4', import.meta.url))
+const output = fileURLToPath(new URL('../../artifacts/video/kerjagimana-horizontal-20s-genz.mp4', import.meta.url))
 const run = (program, args, capture = false) => new Promise((resolve, reject) => {
   const child = spawn(program, args, { cwd, windowsHide: true, stdio: capture ? ['ignore', 'pipe', 'inherit'] : 'inherit' })
   let stdout = ''

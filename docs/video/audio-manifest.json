@@ -1,5 +1,7 @@
 {
   "duration": 20,
+  "assetRightsAudit": "asset-audit.json",
+  "revision": "2026-10-15: Gen Z copy revision with existing domain and beat timing; audio source/mix unchanged. Comparison baseline: kerjagimana-horizontal-20s-audio-domain.mp4; final decoded-audio verification in render-report-20s.json.",
   "sampleRate": 48000,
   "channels": 2,
   "voiceover": false,

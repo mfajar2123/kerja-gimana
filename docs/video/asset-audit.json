@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-10-15T02:34:37.035Z",
+  "intendedUse": "Completed promotional video on web, social media and online ads.",
+  "officialPagesReviewedOn": "2026-10-15",
+  "decision": "Stock assets permit this online commercial end product under the linked licenses; fonts use OFL 1.1.",
+  "restrictions": [
+    "Mixkit music: no TV/radio broadcasts, games or CD/DVD use; no music-only redistribution or rights-management registration.",
+    "Pexels: no implied endorsement, offensive depiction, unaltered resale or stock redistribution.",
+    "Do not distribute Mixkit SFX as standalone files, stock, templates or source packages."
+  ],
+  "brand": "Existing project typography/CSS wordmark and geometric K symbol; no external brand image is rendered. Trademark ownership is outside this stock-license check.",
+  "assets": [
+    {
+      "file": "work.jpg",
+      "provider": "Pexels",
+      "id": "3866621",
+      "author": "Andrea Piacquadio",
+      "source": "https://www.pexels.com/photo/concentrated-multiethnic-group-working-on-laptop-in-office-3866621/",
+      "license": "https://www.pexels.com/license/",
+      "localPath": "assets/revision-20s/work.jpg",
+      "download": "https://images.pexels.com/photos/3866621/pexels-photo-3866621.jpeg?auto=compress&cs=tinysrgb&w=2400",
+      "sha256": "89cc4f502b743cfe0b276cf84d8ab3e4e14c2be8cd27fb0358440de3da0fe577",
+      "bytes": 271764,
+      "remoteSha256": "89cc4f502b743cfe0b276cf84d8ab3e4e14c2be8cd27fb0358440de3da0fe577",
+      "remoteMatchesLocal": true
+    },
+    {
+      "file": "salary.jpg",
+      "provider": "Pexels",
+      "id": "16695382",
+      "author": "Jakub Zerdzicki",
+      "source": "https://www.pexels.com/photo/man-hands-over-calculator-16695382/",
+      "license": "https://www.pexels.com/license/",
+      "localPath": "assets/revision-20s/salary.jpg",
+      "download": "https://images.pexels.com/photos/16695382/pexels-photo-16695382.jpeg?auto=compress&cs=tinysrgb&w=2400",
+      "sha256": "e8f78900cf750bea820a188a4993d362795435e31143f2ac01ba0af0bf6ddb8f",
+      "bytes": 296778,
+      "remoteSha256": "e8f78900cf750bea820a188a4993d362795435e31143f2ac01ba0af0bf6ddb8f",
+      "remoteMatchesLocal": true
+    },
+    {
+      "file": "interview.jpg",
+      "provider": "Pexels",
+      "id": "5439157",
+      "author": "Tima Miroshnichenko",
+      "source": "https://www.pexels.com/photo/candidate-having-an-interview-5439157/",
+      "license": "https://www.pexels.com/license/",
+      "localPath": "assets/revision-20s/interview.jpg",
+      "download": "https://images.pexels.com/photos/5439157/pexels-photo-5439157.jpeg?auto=compress&cs=tinysrgb&w=2400",
+      "sha256": "06f1c76fba4cc19c21cef849e07d7685295af2a677cafd919175ab0c3860f60c",
+      "bytes": 313345,
+      "remoteSha256": "06f1c76fba4cc19c21cef849e07d7685295af2a677cafd919175ab0c3860f60c",
+      "remoteMatchesLocal": true
+    },
+    {
+      "file": "music-original.mp3",
+      "provider": "Mixkit",
+      "title": "Tech House vibes",
+      "source": "https://mixkit.co/free-stock-music/electronica/",
+      "download": "https://assets.mixkit.co/music/130/130.mp3",
+      "license": "https://mixkit.co/license/modal/musicFree/",
+      "cachedPage": "music-source.html",
+      "localPath": "assets/revision-20s/music-original.mp3",
+      "sha256": "95972c602ff0686e298792f45b384f0e15477f3cf983f05dd98fd5e5d965eed6",
+      "bytes": 3276082,
+      "remoteSha256": "95972c602ff0686e298792f45b384f0e15477f3cf983f05dd98fd5e5d965eed6",
+      "remoteMatchesLocal": true
+    },
+    {
+      "file": "sweep-original.wav",
+      "provider": "Mixkit",
+      "id": "166",
+      "title": "Fast small sweep transition",
+      "source": "https://mixkit.co/free-sound-effects/transition/",
+      "download": "https://assets.mixkit.co/active_storage/sfx/166/166.wav",
+      "license": "https://mixkit.co/license/modal/sfxFree/",
+      "cachedPage": "sfx-source.html",
+      "localPath": "assets/revision-20s/sweep-original.wav",
+      "sha256": "ca5a0206a7e6b12893a5727cb98a9d43ab02893153465eb21d43fb7b9e6616c3",
+      "bytes": 138746,
+      "remoteSha256": "ca5a0206a7e6b12893a5727cb98a9d43ab02893153465eb21d43fb7b9e6616c3",
+      "remoteMatchesLocal": true
+    },
+    {
+      "file": "zoom-original.wav",
+      "provider": "Mixkit",
+      "id": "2608",
+      "title": "Air zoom vacuum",
+      "source": "https://mixkit.co/free-sound-effects/transition/",
+      "download": "https://assets.mixkit.co/active_storage/sfx/2608/2608.wav",
+      "license": "https://mixkit.co/license/modal/sfxFree/",
+      "cachedPage": "sfx-source.html",
+      "localPath": "assets/revision-20s/zoom-original.wav",
+      "sha256": "62d46c7faeaa2860f5ba94657be00d7604e8693f143b22291968d28043c70bfa",
+      "bytes": 224908,
+      "remoteSha256": "62d46c7faeaa2860f5ba94657be00d7604e8693f143b22291968d28043c70bfa",
+      "remoteMatchesLocal": true
+    },
+    {
+      "localPath": "assets/space-grotesk.woff2",
+      "sha256": "0640890476fc1198ab4de571fb658de443c4d85b66466ec09534a8737ab1ce9d",
+      "license": "SIL Open Font License 1.1",
+      "evidence": "licenses/space-grotesk-OFL.txt",
+      "packageBytesMatch": true
+    },
+    {
+      "localPath": "assets/plus-jakarta-sans.woff2",
+      "sha256": "153fc85b70298beeb1d61a5f723331649e7f23bb77302a66e61cb3e2fbdb5e79",
+      "license": "SIL Open Font License 1.1",
+      "evidence": "licenses/plus-jakarta-sans-OFL.txt",
+      "packageBytesMatch": true
+    }
+  ],
+  "unchangedAudio": {
+    "path": "assets/revision-20s/mix.wav",
+    "sha256": "aed783ac77f536367bb575dc9283c7b9d15b05715f2fad1643fdd9ab5d1a46a0"
+  }
+}

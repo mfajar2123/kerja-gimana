@@ -1,0 +1,9 @@
+{
+  "duration": 20,
+  "assertions": [
+    { "kind": "appearsBy", "selector": "#h-kerja", "bySec": 0.4 },
+    { "kind": "appearsBy", "selector": "#brand", "bySec": 18.3 },
+    { "kind": "appearsBy", "selector": "#domain", "bySec": 18.45 },
+    { "kind": "staysInFrame", "selector": "#domain" }
+  ]
+}

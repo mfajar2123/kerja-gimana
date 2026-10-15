@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>KerjaGimana — Gen Z / Portrait</title><script src="assets/gsap.min.js"></script><style>html,body{margin:0;background:#000;width:1080px;height:1920px;overflow:hidden}#master{position:relative;width:1080px;height:1920px}</style></head>
+<body>
+  <main id="master" data-composition-id="kerjagimana-portrait-master" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+    <div id="film-mount" class="clip" data-composition-id="kerjagimana-portrait" data-composition-src="compositions/film.html" data-start="0" data-duration="20" data-track-index="0"></div>
+    <audio id="soundtrack" class="clip" src="assets/mix.wav" data-start="0" data-duration="20" data-track-index="1" data-volume="1"></audio>
+  </main>
+  <script>
+    const masterTimeline = gsap.timeline({ paused: true });
+    masterTimeline.to({}, { duration: 20 });
+    window.__timelines = window.__timelines || {};
+    window.__timelines['kerjagimana-portrait-master'] = masterTimeline;
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><title>KerjaGimana — Portrait 20s</title><link rel="stylesheet" href="../style.css"><script src="../assets/gsap.min.js"></script></head>
+<body>
+  <main id="root" data-composition-id="kerjagimana-portrait" data-start="0" data-duration="20" data-width="1080" data-height="1920">
+    <div id="film">
+      <section id="hook" class="type-scene"><div id="hook-camera" class="camera">
+        <span id="h-kerja" class="word hook-word" style="left:110px;top:610px">Mau kerja</span>
+        <span id="h-di" class="word hook-word" style="left:110px;top:790px">di</span>
+        <span id="h-sana" class="word hook-word" style="left:245px;top:790px">sana?</span>
+      </div></section>
+      <section id="question" class="type-scene"><div id="question-camera" class="camera">
+        <span id="q-yakin" class="word question-word" style="left:110px;top:480px">Udah</span>
+        <span id="q-udah" class="word question-word" style="left:450px;top:480px">yakin</span>
+        <span id="q-tahu" class="word question-word red" style="left:110px;top:690px">cocok</span>
+        <span id="q-dalem" class="word question-word" style="left:110px;top:900px">buat kamu?</span>
+      </div></section>
+      <section id="photos" data-layout-ignore>
+        <div id="photo-work" class="photo-scene"><img id="image-work" src="../assets/work.jpg" alt="Ilustrasi rekan kerja berkolaborasi"><div class="photo-shade"></div></div>
+        <div id="photo-salary" class="photo-scene"><img id="image-salary" src="../assets/salary.jpg" alt="Ilustrasi menghitung informasi keuangan"><div class="photo-shade"></div></div>
+        <div id="photo-interview" class="photo-scene"><img id="image-interview" src="../assets/interview.jpg" alt="Ilustrasi percakapan interview"><div class="photo-shade"></div></div>
+      </section>
+      <div id="work-camera" class="camera">
+        <span id="p-work-one" class="word photo-word" style="left:110px;top:920px">Intip cerita</span>
+        <span id="p-work-two" class="word photo-word" style="left:110px;top:1090px">kerjanya.</span>
+      </div>
+      <div id="salary-camera" class="camera">
+        <span id="p-salary-one" class="word photo-word" style="left:110px;top:920px">Cek info</span>
+        <span id="p-salary-two" class="word photo-word" style="left:110px;top:1090px">gajinya.</span>
+      </div>
+      <p id="salary-qualifier">Kalau datanya cukup.</p>
+      <div id="interview-camera" class="camera">
+        <span id="p-interview-one" class="word photo-word" style="left:110px;top:920px">Gimana</span>
+        <span id="p-interview-two" class="word photo-word interview-word" style="left:110px;top:1090px">interview-nya?</span>
+      </div>
+      <div id="paper" data-layout-ignore></div>
+      <section id="compare" class="type-scene"><div id="compare-camera" class="camera">
+        <span id="c-bandingkan" class="word compare-word" style="left:110px;top:570px">Bandingin</span>
+        <span id="c-sebelum" class="word compare-word" style="left:110px;top:760px">dulu,</span>
+        <span id="c-memilih" class="word compare-word" style="left:110px;top:950px">baru pilih.</span>
+      </div></section>
+      <div id="closing-black" data-layout-ignore></div>
+      <section id="closing" class="type-scene"><div id="closing-camera" class="camera">
+        <span id="f-sebelum" class="word final-word" style="left:110px;top:480px">Biar</span>
+        <span id="f-kerja" class="word final-word" style="left:330px;top:480px">makin</span>
+        <span id="f-disana" class="word final-word" style="left:110px;top:650px">yakin,</span>
+        <span id="f-cari" class="word final-word" style="left:110px;top:870px">cek</span>
+        <span id="f-tahu" class="word final-word red" style="left:310px;top:870px">dulu,</span>
+        <span id="f-dulu" class="word final-word" style="left:110px;top:1040px">baru gas.</span>
+      </div></section>
+      <div id="brand"><span class="brand-symbol">K<span>.</span></span><span>kerja<span class="brand-light">gimana</span></span></div>
+      <div id="cta"><div class="cta-label">Cek perusahaan incaranmu <span class="cta-arrow">↗</span></div><div id="domain">kerjagimana.live</div></div>
+    </div>
+  </main>
+  <script>/* PORTRAIT_ANIMATION */</script>
+</body>
+</html>

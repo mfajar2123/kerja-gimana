@@ -30,7 +30,7 @@ try {
       [9.06, 9.77, ['#p-salary-one', '#p-salary-two', '#salary-qualifier']],
       [11.50, 12.65, ['#p-interview-one', '#p-interview-two']],
       [14.64, 15.05, ['#c-bandingkan', '#c-sebelum', '#c-memilih']],
-      [18.46, 19.99, ['#f-sebelum', '#f-kerja', '#f-disana', '#f-cari', '#f-tahu', '#f-dulu', '#brand', '#cta']],
+      [18.46, 19.99, ['#f-sebelum', '#f-kerja', '#f-disana', '#f-cari', '#f-tahu', '#f-dulu', '#brand', '#cta', '#domain']],
     ]
     const focused = [[0.25,'#h-kerja'],[0.98,'#h-sana'],[1.98,'#q-yakin'],[2.56,'#q-udah'],[3.12,'#q-tahu'],[3.63,'#q-dalem'],[5.46,'#p-work-one'],[5.91,'#p-work-two'],[15.62,'#f-sebelum'],[16.25,'#f-disana'],[16.76,'#f-cari'],[17.28,'#f-dulu']]
     const pose = selector => {
@@ -56,7 +56,7 @@ try {
       if(p.opacity<.80 || p.x<30 || p.right>1890 || p.y<20 || p.bottom>1060) focusProblems.push({time,selector,...p})
     }
     const moments=[.25,1.4,2.55,3.6,4.4,6.5,9.2,11.8,14.8,16.2,17.2,19]
-    const selectors=['#hook-camera','#question-camera','#image-work','#image-salary','#image-interview','#closing-camera']
+    const selectors=['#hook-camera','#question-camera','#image-work','#image-salary','#image-interview','#closing-camera','#cta','#domain']
     const state=time=>{tl.seek(time,false);return JSON.stringify(selectors.map(pose))}
     const forward=moments.map(state),backward=[...moments].reverse().map(state).reverse()
     const metrics=[...document.querySelectorAll('.word')].map(el=>({id:el.id,text:el.textContent,left:el.offsetLeft,top:el.offsetTop,width:el.offsetWidth,height:el.offsetHeight}))

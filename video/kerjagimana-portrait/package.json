@@ -1,0 +1,11 @@
+{
+  "name": "kerjagimana-portrait-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:assets": "node prepare-assets.mjs",
+    "check": "node tools.mjs check --strict",
+    "preview": "node tools.mjs preview --background --no-open --port 3004",
+    "render": "node render.mjs"
+  }
+}
