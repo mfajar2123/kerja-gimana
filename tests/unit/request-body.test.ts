@@ -5,6 +5,7 @@ import { fetchNodeRequestHandler } from 'node-mock-http'
 import { readLimitedJson } from '../../server/utils/request-body'
 import { validatedBody } from '../../server/utils/validation'
 import { loginSchema } from '../../shared/schemas'
+import type { H3Event } from 'h3'
 
 const credentials = { email: 'body-probe@example.invalid', password: 'Synthetic test password' }
 const app = createApp()
@@ -23,6 +24,12 @@ function cloudflareRequest(body: Uint8Array, headers: Record<string, string> = {
 }
 
 describe('JSON request body across production transports', () => {
+  it('reads a DELETE body from the original Cloudflare request', async () => {
+    const request = new Request('https://example.invalid/api/admin/content', { method: 'DELETE', body: JSON.stringify(credentials) })
+    const event = { method: 'DELETE', context: { _platform: { cloudflare: { request } } }, node: { req: {} } } as unknown as H3Event
+    expect(await readLimitedJson(event)).toEqual(credentials)
+    expect(await readLimitedJson(event)).toEqual(credentials)
+  })
   it('reads a Cloudflare buffered body without content-length and reuses it for validation', async () => {
     const response = await cloudflareRequest(Buffer.from(JSON.stringify(credentials)))
     expect(response.status).toBe(200)

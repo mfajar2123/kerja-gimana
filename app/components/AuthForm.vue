@@ -20,7 +20,7 @@ const description = computed(() => ({
   login: adminIntent.value ? 'Gunakan akun yang memiliki akses admin. Akun pengguna biasa tetap masuk ke dashboard pribadi.' : 'Masuk untuk membaca dan mengelola kontribusimu.',
   register: 'Buat akun dengan email aktif. Verifikasi email sebelum mengirim kontribusi.',
   recovery: 'Masukkan email akunmu. Kami akan mengirim petunjuk reset jika tersedia.',
-  reset: 'Gunakan sedikitnya 15 karakter. Hindari kata sandi yang pernah kamu pakai.',
+  reset: 'Gunakan sedikitnya 8 karakter. Hindari kata sandi yang pernah kamu pakai.',
 })[props.mode])
 const submitLabel = computed(() => ({ login: 'Masuk ke akun', register: 'Daftar dan verifikasi email', recovery: 'Kirim petunjuk reset', reset: 'Simpan kata sandi baru' })[props.mode])
 
@@ -32,8 +32,8 @@ async function submit() {
     errorMessage.value = 'Kata sandinya belum cocok.'
     return
   }
-  if ((props.mode === 'register' || props.mode === 'reset') && password.value.length < 15) {
-    errorMessage.value = 'Pakai sedikitnya 15 karakter untuk kata sandi.'
+  if ((props.mode === 'register' || props.mode === 'reset') && password.value.length < 8) {
+    errorMessage.value = 'Pakai sedikitnya 8 karakter untuk kata sandi.'
     return
   }
   submitting.value = true
@@ -76,11 +76,11 @@ async function submit() {
       </div>
       <div v-if="mode !== 'recovery'" class="product-field">
         <label for="auth-password">Kata sandi</label>
-        <div class="input-with-icon"><LockKeyhole :size="17" aria-hidden="true" /><input id="auth-password" v-model="password" type="password" :autocomplete="mode === 'login' ? 'current-password' : 'new-password'" required :minlength="mode === 'login' ? 1 : 15" maxlength="128" placeholder="Sedikitnya 15 karakter" :disabled="submitting || !ready"></div>
+        <div class="input-with-icon"><LockKeyhole :size="17" aria-hidden="true" /><input id="auth-password" v-model="password" type="password" :autocomplete="mode === 'login' ? 'current-password' : 'new-password'" required :minlength="mode === 'login' ? 1 : 8" maxlength="128" :placeholder="mode === 'login' ? 'Kata sandi' : 'Sedikitnya 8 karakter'" :disabled="submitting || !ready"></div>
       </div>
       <div v-if="mode === 'register' || mode === 'reset'" class="product-field">
         <label for="auth-password-confirm">Ulangi kata sandi</label>
-        <div class="input-with-icon"><LockKeyhole :size="17" aria-hidden="true" /><input id="auth-password-confirm" v-model="confirmation" type="password" autocomplete="new-password" required minlength="15" maxlength="128" placeholder="Tulis ulang kata sandi" :disabled="submitting || !ready"></div>
+        <div class="input-with-icon"><LockKeyhole :size="17" aria-hidden="true" /><input id="auth-password-confirm" v-model="confirmation" type="password" autocomplete="new-password" required minlength="8" maxlength="128" placeholder="Tulis ulang kata sandi" :disabled="submitting || !ready"></div>
       </div>
 
       <p v-if="errorMessage" class="form-notice form-notice-error" role="alert">{{ errorMessage }}</p>

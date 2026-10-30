@@ -50,5 +50,8 @@ describe('shared input rules', () => {
     expect(detectPersonalInformation('Hubungi saya di orang@example.com')).toBe(true)
     expect(detectPersonalInformation('Hubungi saya besok sore')).toBe(false)
     expect(authSchema.safeParse({ email: 'a@example.com', password: 'short' }).success).toBe(false)
+    expect(authSchema.safeParse({ email: 'a@example.com', password: '1234567' }).success).toBe(false)
+    expect(authSchema.safeParse({ email: 'a@example.com', password: '12345678' }).success).toBe(true)
+    expect(authSchema.safeParse({ email: 'a@example.com', password: 'x'.repeat(129) }).success).toBe(false)
   })
 })

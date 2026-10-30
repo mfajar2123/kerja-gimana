@@ -11,7 +11,10 @@ export async function readLimitedJson(event: H3Event, limit = 32768): Promise<un
     chunks.push(chunk)
   }
   const request = event.node.req
-  const webBody = event.web?.request?.body
+  // Nitro's Cloudflare adapter does not forward DELETE bodies to its mock Node
+  // request. The original request remains available on the platform context.
+  const cloudflareRequest = event.method === 'DELETE' ? event.context._platform?.cloudflare?.request as Request | undefined : undefined
+  const webBody = event.web?.request?.body ?? cloudflareRequest?.body
   if (webBody) {
     const reader = webBody.getReader()
     try {

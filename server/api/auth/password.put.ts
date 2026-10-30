@@ -1,9 +1,10 @@
 import { z } from 'zod'
+import { passwordSchema } from '#shared/schemas'
 import { consumeLimit } from '../../services/rate-limit'
 import { requireUser } from '../../utils/supabase'
 import { validatedBody } from '../../utils/validation'
 
-const schema = z.object({ password: z.string().min(15).max(128) }).strict()
+const schema = z.object({ password: passwordSchema }).strict()
 export default defineEventHandler(async event => {
   const { db, user } = await requireUser(event)
   await consumeLimit(event, 'password-update', 3, user.id)

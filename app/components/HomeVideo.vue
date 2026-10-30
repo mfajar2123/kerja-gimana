@@ -15,7 +15,7 @@ onMounted(() => {
     observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries
-        if (!videoRef.value) return
+        if (!videoRef.value || !entry) return
         if (entry.isIntersecting) {
           videoRef.value.play().catch(() => {})
         } else {

@@ -40,7 +40,8 @@ export const companySchema = z.object({
 export const reportSchema = z.object({ review_id: uuid, reason: z.enum(['privacy', 'harassment', 'spam', 'disputed_claim']), details: text(20, 2000) }).strict()
 export const responseSchema = z.object({ company_id: uuid, review_id: uuid.nullable(), content: text(30, 4000), evidence: text(20, 2000) }).strict()
 export const contactSchema = z.object({ email: z.email().max(254), subject: text(3, 120), message: text(20, 4000) }).strict()
-export const authSchema = z.object({ email: z.email().max(254), password: z.string().min(15).max(128) }).strict()
+export const passwordSchema = z.string().min(8).max(128)
+export const authSchema = z.object({ email: z.email().max(254), password: passwordSchema }).strict()
 export const loginSchema = z.object({ email: z.email().max(254), password: z.string().min(1).max(128) }).strict()
 export const moderationSchema = z.object({
   kind: z.enum(['review', 'salary', 'interview', 'company', 'report', 'response', 'representative', 'contact']), id: uuid,
