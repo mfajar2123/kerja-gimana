@@ -38,7 +38,8 @@ export default defineNuxtConfig({
       bodyAttrs: { class: 'dark' },
       title: 'KerjaGimana — Sebelum kerja di sana, cari tahu dulu.',
       meta: [{ name: 'theme-color', content: '#000000' }],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      // Google Search does not support SVG favicons; keep a crawlable PNG as the canonical icon.
+      link: [{ rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon.png' }],
     },
   },
   routeRules: {
