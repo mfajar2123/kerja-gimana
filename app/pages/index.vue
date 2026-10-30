@@ -137,6 +137,8 @@ const footDelay = currentDelay + 140
 
     <HomeCompanies />
 
+    <HomeArticles />
+
     <HomeAiPreview />
 
     <section class="transparency-section section-pad" aria-labelledby="transparency-title">

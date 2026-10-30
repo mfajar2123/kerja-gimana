@@ -28,6 +28,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', closeOnEscape))
 const publicLinks = [
   { to: '/perusahaan', label: 'Perusahaan' },
   { to: '/bandingkan', label: 'Bandingkan' },
+  { to: '/artikel', label: 'Artikel' },
   { to: '/tentang', label: 'Tentang kami' },
 ]
 const links = computed(() => inAdmin.value ? [
@@ -105,6 +106,7 @@ const isHome = computed(() => route.path === '/')
           <NuxtLink to="/perusahaan">Cari perusahaan</NuxtLink>
           <NuxtLink to="/bandingkan">Bandingkan</NuxtLink>
           <NuxtLink to="/panduan-review">Panduan review</NuxtLink>
+          <NuxtLink to="/artikel">Artikel</NuxtLink>
           <NuxtLink to="/kontak">Kontak</NuxtLink>
           <NuxtLink to="/privasi">Privasi</NuxtLink>
           <NuxtLink to="/ketentuan">Ketentuan</NuxtLink>

@@ -1,12 +1,14 @@
 import { setHeader } from 'h3'
 import { configured, database } from '../utils/supabase'
+import { articles } from '../../shared/articles'
 
-const publicPaths = ['/', '/perusahaan', '/bandingkan', '/tentang', '/panduan-review', '/privasi', '/ketentuan', '/kontak']
+const publicPaths = ['/', '/perusahaan', '/bandingkan', '/artikel', '/tentang', '/panduan-review', '/privasi', '/ketentuan', '/kontak']
 const escapeXml = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;')
 
 export default defineEventHandler(async event => {
   const origin = useRuntimeConfig(event).siteUrl.replace(/\/$/, '')
   const urls = [...publicPaths.map(path => `${origin}${path}`)]
+  for (const article of articles) urls.push(`<url><loc>${escapeXml(`${origin}/artikel/${article.slug}`)}</loc><lastmod>${article.date}</lastmod></url>`)
   if (configured(event)) {
     try {
       const db = database(event)
