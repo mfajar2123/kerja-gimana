@@ -53,3 +53,7 @@ export const directorySchema = z.object({
   q: text(0, 100).default(''), industry: text(0, 80).default(''), location: text(0, 100).default(''),
   page: z.coerce.number().int().min(1).max(1000).default(1),
 }).strict()
+export const articleDirectorySchema = z.object({
+  q: text(0, 100).default(''), category: text(0, 80).default(''),
+  page: z.coerce.number().int().min(1).max(1000).default(1),
+}).strict()

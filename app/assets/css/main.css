@@ -32,6 +32,20 @@
 .articles-hero-description { max-width: 560px; margin: 25px 0 0; color: var(--kg-muted); font-size: clamp(16px, 1.8vw, 20px); line-height: 1.7; }
 .articles-list-heading h2 { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.04em; }
 .articles-list-heading p { margin: 0; }
+.article-filters { display: grid; grid-template-columns: minmax(220px, 1fr) minmax(180px, .45fr) auto; gap: 12px; margin: 0 0 18px; padding-block: 20px; border-block: 1px solid var(--kg-line); }
+.article-search { display: flex; min-width: 0; min-height: 50px; align-items: center; gap: 12px; border: 1px solid var(--kg-line); padding-inline: 14px; background: var(--kg-ink); }
+.article-search svg { flex: 0 0 auto; color: var(--kg-muted); }
+.article-search input, .article-category select { width: 100%; min-width: 0; min-height: 50px; border: 1px solid var(--kg-line); border-radius: 0; padding: 12px 14px; background: var(--kg-ink); color: var(--kg-white); font: inherit; font-size: 14px; }
+.article-search input { border: 0; padding-inline: 0; background: transparent; }
+.article-search:focus-within, .article-category select:focus-visible { outline: 2px solid var(--kg-red); outline-offset: 2px; }
+.article-search input:focus-visible { outline: none; }
+.article-search input::placeholder { color: var(--kg-muted); opacity: 1; }
+.article-clear { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; border: 0; padding: 10px; color: var(--kg-white); background: transparent; font-size: 12px; }
+.article-status { min-height: 20px; margin: 0 0 24px; color: var(--kg-muted); font-size: 13px; }
+.article-empty { min-height: 190px; padding-block: 32px; border-block: 1px solid var(--kg-line); color: var(--kg-muted); }
+.article-empty .text-link { display: inline-flex; align-items: center; gap: 8px; border: 0; padding: 0; color: var(--kg-white); background: transparent; text-decoration: underline; text-underline-offset: 4px; }
+.article-pagination button { border-color: var(--kg-line); color: var(--kg-white); }
+.article-pagination button:not(:disabled):hover { background: var(--kg-ink); }
 .article-detail-header { padding-bottom: 0; }
 .article-detail-intro { max-width: 1000px; margin: 0 auto; }
 .article-detail-intro h1 { max-width: 1000px; font-size: clamp(42px, 6.2vw, 86px); text-wrap: balance; }
@@ -60,6 +74,8 @@
 @media (max-width: 560px) {
   .articles-grid { grid-template-columns: 1fr; gap: 38px; }
   .articles-list-heading { align-items: start; flex-direction: column; gap: 8px; }
+  .article-filters { grid-template-columns: 1fr; gap: 10px; }
+  .article-clear { justify-content: flex-start; padding-left: 0; }
   .article-card h3 { font-size: 25px; }
   .article-detail-intro h1 { font-size: clamp(40px, 10vw, 54px); }
   .article-breadcrumb [aria-current] { overflow-wrap: anywhere; }

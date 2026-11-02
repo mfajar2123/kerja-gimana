@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ArrowUpRight } from '@lucide/vue'
-import { formatArticleDate, type Article } from '#shared/articles'
-defineProps<{ article: Article }>()
+import { formatArticleDate } from '#shared/utils/article-date'
+import type { ArticleSummary } from '#shared/articles'
+defineProps<{ article: ArticleSummary }>()
 </script>
 
 <template>

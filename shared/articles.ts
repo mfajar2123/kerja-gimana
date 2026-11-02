@@ -10,6 +10,15 @@ export interface Article {
   sections: { heading: string; paragraphs: string[] }[]
 }
 
+export type ArticleSummary = Pick<Article, 'slug' | 'title' | 'description' | 'category' | 'date' | 'image' | 'imageAlt'>
+export interface ArticleDirectoryResult {
+  articles: ArticleSummary[]
+  categories: string[]
+  total: number
+  page: number
+  pageSize: number
+}
+
 // Editorial content is intentionally local for now; this structure can later be
 // replaced by a CMS without changing article URLs.
 export const articles: Article[] = [
@@ -605,5 +614,3 @@ for (const article of articles) {
   const note = practicalNotes[article.slug]
   if (note) article.sections.push(note)
 }
-
-export const formatArticleDate = (date: string) => new Intl.DateTimeFormat('id-ID', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date}T00:00:00Z`))

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, ArrowUpRight } from '@lucide/vue'
-import { articles, formatArticleDate } from '#shared/articles'
+import { articles } from '#shared/articles'
+import { formatArticleDate } from '#shared/utils/article-date'
 definePageMeta({ key: route => route.path })
 const route = useRoute()
 const config = useRuntimeConfig()
