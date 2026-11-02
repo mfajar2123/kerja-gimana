@@ -105,6 +105,7 @@ const isHome = computed(() => route.path === '/')
         <nav class="footer-links" aria-label="Navigasi footer">
           <NuxtLink to="/perusahaan">Cari perusahaan</NuxtLink>
           <NuxtLink to="/bandingkan">Bandingkan</NuxtLink>
+          <NuxtLink to="/bandingkan-tawaran">Bandingkan tawaran kerja</NuxtLink>
           <NuxtLink to="/panduan-review">Panduan review</NuxtLink>
           <NuxtLink to="/artikel">Artikel</NuxtLink>
           <NuxtLink to="/kontak">Kontak</NuxtLink>

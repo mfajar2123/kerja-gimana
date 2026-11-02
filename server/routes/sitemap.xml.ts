@@ -2,7 +2,7 @@ import { setHeader } from 'h3'
 import { configured, database } from '../utils/supabase'
 import { articles } from '../../shared/articles'
 
-const publicPaths = ['/', '/perusahaan', '/bandingkan', '/artikel', '/tentang', '/panduan-review', '/kontak']
+const publicPaths = ['/', '/perusahaan', '/bandingkan', '/bandingkan-tawaran', '/artikel', '/tentang', '/panduan-review', '/kontak']
 const escapeXml = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;')
 
 export default defineEventHandler(async event => {

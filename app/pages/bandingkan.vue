@@ -30,6 +30,7 @@ const comparisonMetrics = [
   <section class="page-editorial compare-page">
 
     <header class="directory-intro"><div><h1>Dua pilihan.<br><span class="type-red">Lihat lebih jelas.</span></h1><p>Pilih dua atau tiga perusahaan. Setiap angka diambil dari informasi yang sudah tersedia.</p></div><span class="compare-count">{{ ids.length }} / 3 dipilih</span></header>
+    <p>Sudah punya tawaran kerja? <NuxtLink class="text-link" to="/bandingkan-tawaran">Bandingkan penghasilan dan biaya →</NuxtLink></p>
     <div class="compare-search"><label for="compare-search">Cari perusahaan</label><input id="compare-search" v-model="query" type="search" maxlength="100" placeholder="Ketik nama perusahaan"></div>
     <div v-if="selectedCompanies.length" class="compare-selection" role="group" aria-label="Perusahaan yang dipilih">
       <button v-for="company in selectedCompanies" :key="company.id" type="button" class="compare-selection-chip" :aria-label="`Batalkan pilihan ${company.name}`" @click="toggle(company)">{{ company.name }}<X :size="15" aria-hidden="true" /></button>
