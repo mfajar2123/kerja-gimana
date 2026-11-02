@@ -37,7 +37,10 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'id' },
       bodyAttrs: { class: 'dark' },
       title: 'KerjaGimana — Sebelum kerja di sana, cari tahu dulu.',
-      meta: [{ name: 'theme-color', content: '#000000' }],
+      meta: [
+        { name: 'theme-color', content: '#000000' },
+        { name: 'google-adsense-account', content: 'ca-pub-3520742189278865' },
+      ],
       // Google Search does not support SVG favicons; keep a crawlable PNG as the canonical icon.
       link: [{ rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon.png' }],
     },
