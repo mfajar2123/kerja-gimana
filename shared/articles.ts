@@ -14,6 +14,66 @@ export interface Article {
 // replaced by a CMS without changing article URLs.
 export const articles: Article[] = [
   {
+    slug: 'kerja-inklusif-disabilitas-batang-2026',
+    title: 'Peluang kerja inklusif di Batang: melihat pengalaman pekerja disabilitas',
+    description: 'Pemberitaan tentang pekerja disabilitas di industri alas kaki membuka percakapan tentang akses dan dukungan di tempat kerja.',
+    category: 'Dunia kerja', date: '2026-11-02', image: '/images/articles/kualitas-kerja.webp', imageAlt: 'Ilustrasi pekerja berbincang tentang lingkungan kerja',
+    source: { name: 'tvOnenews', url: 'https://www.tvonenews.com/ekonomi/475986-kisah-dari-batang-mengubah-stigma-lewat-peluang-kerja-inklusif-bagi-penyandang-disabilitas', date: '31 Oktober 2026' },
+    sections: [
+      { heading: 'Kesempatan di industri alas kaki', paragraphs: ['tvOnenews melaporkan PT Yih Quan Footwear Indonesia di Batang mempekerjakan 174 penyandang disabilitas, sekitar 2,8% dari 6.131 karyawan yang disebut dalam laporan tersebut.', 'Menurut pemberitaan itu, perusahaan menggunakan asesmen internal untuk mempertimbangkan kondisi dan kemampuan pekerja dalam penempatan. Pengalaman satu perusahaan tidak otomatis menggambarkan kondisi seluruh industri.'] },
+      { heading: 'Inklusi juga menyangkut pengalaman sehari-hari', paragraphs: ['Kesempatan melamar adalah langkah awal. Akses ke lingkungan kerja, komunikasi yang jelas, penyesuaian yang dibutuhkan, dan kesempatan berkembang juga perlu diperhatikan.', 'Pencari kerja dapat bertanya tentang akses tempat kerja, proses seleksi, dan dukungan yang tersedia sesuai kebutuhan masing-masing. Perusahaan perlu mendengarkan langsung kebutuhan kandidat dan pekerjanya.'] },
+      { heading: 'Periksa informasi sebelum melamar', paragraphs: ['Artikel ini membahas praktik yang diberitakan, bukan pengumuman lowongan. Periksa kanal resmi perusahaan atau dinas tenaga kerja untuk mengetahui apakah ada posisi yang sedang dibuka.'] },
+    ],
+  },
+  {
+    slug: 'sertifikasi-pekerja-sosial-koordinasi-2026',
+    title: 'Sertifikasi pekerja sosial: Kemensos matangkan materi uji kompetensi',
+    description: 'Koordinasi Kemensos menyoroti persiapan sertifikasi bagi pekerja sosial dan tenaga kesejahteraan sosial.',
+    category: 'Pengembangan karier', date: '2026-11-02', image: '/images/articles/perlindungan.webp', imageAlt: 'Ilustrasi pekerja berdiskusi tentang dokumen kerja',
+    source: { name: 'Poltekesos Bandung', url: 'https://poltekesos.ac.id/berita/matangkan-uji-kompetensi-sdm-kesejahteraan-sosial-kemensos-gelar-koordinasi-di-bekasi', date: '1 November 2026' },
+    sections: [
+      { heading: 'Koordinasi untuk pelaksanaan sertifikasi', paragraphs: ['Poltekesos Bandung memberitakan bahwa Kemensos mengadakan koordinasi sertifikasi SDM kesejahteraan sosial di Bekasi pada 29–31 Oktober 2026. Pembahasan mencakup mekanisme sertifikasi dan persiapan materi uji bagi pekerja sosial, tenaga kesejahteraan sosial, dan relawan sosial.', 'Laporan itu menyebut finalisasi materi uji pekerja sosial masih perlu dilakukan dengan melibatkan sejumlah lembaga dan organisasi profesi. Kegiatan koordinasi tersebut bukan pengumuman pendaftaran sertifikasi.'] },
+      { heading: 'Apa yang bisa disiapkan?', paragraphs: ['Jika kamu bekerja atau ingin berkarier di bidang kesejahteraan sosial, pelajari kompetensi yang berkaitan dengan peranmu dan catat pengalaman yang relevan. Simpan dokumen pendidikan dan pengalaman kerja secara rapi.', 'Persyaratan dan jadwal uji dapat berbeda menurut skema. Cek informasi terbaru langsung pada lembaga sertifikasi atau penyelenggara resmi sebelum mengambil keputusan.'] },
+      { heading: 'Pilih pelatihan sesuai kebutuhan', paragraphs: ['Bandingkan materi, biaya, dan pengakuan sertifikat sebelum mengikuti pelatihan. Sertifikat bermanfaat bila sesuai dengan kompetensi yang ingin dibangun dan kebutuhan pekerjaan yang dituju.'] },
+    ],
+  },
+  {
+    slug: 'kompetisi-teknisi-pompa-layanan-purnajual-2026',
+    title: 'Kompetisi teknisi pompa air: keterampilan yang dibutuhkan setelah penjualan',
+    description: 'Kompetisi teknisi menyoroti pentingnya instalasi, pemahaman produk, dan komunikasi dengan pelanggan.',
+    category: 'Keterampilan', date: '2026-11-02', image: '/images/articles/magang.webp', imageAlt: 'Ilustrasi pekerja belajar bersama di lingkungan kerja',
+    source: { name: 'Media Indonesia', url: 'https://mediaindonesia.com/ekonomi/950921/kompetisi-keterampilan-teknisi-jadi-bagian-dari-penguatan-layanan-purnajual', date: '1 November 2026' },
+    sections: [
+      { heading: 'Peran teknisi setelah produk dibeli', paragraphs: ['Media Indonesia memberitakan Jagoan Wasser 2026, program yang menggabungkan kompetisi keterampilan teknisi pompa air, pengenalan komunitas, serta konsultasi produk dan layanan.', 'Teknisi membantu pelanggan memahami kebutuhan instalasi dan memilih sistem yang sesuai dengan kondisi sumber air serta penggunaan di rumah. Ini menunjukkan bahwa pekerjaan teknis juga membutuhkan pemahaman konteks pelanggan.'] },
+      { heading: 'Kembangkan kemampuan secara bertahap', paragraphs: ['Bagi calon teknisi, dasar instalasi, pemecahan masalah, dan prosedur keselamatan merupakan hal yang bisa dipelajari melalui pelatihan dan praktik yang diawasi. Ikuti petunjuk produk dan batas kewenangan pekerjaan yang dikerjakan.', 'Kemampuan menjelaskan masalah dan langkah perbaikan dengan bahasa yang mudah dipahami juga membantu pelanggan mengambil keputusan.'] },
+      { heading: 'Cari pengalaman belajar yang relevan', paragraphs: ['Saat memilih pelatihan atau komunitas, periksa materi praktik, pendampingan, dan reputasi penyelenggara. Kompetisi yang diberitakan adalah kegiatan perusahaan, bukan jaminan lowongan kerja.'] },
+    ],
+  },
+  {
+    slug: 'kesehatan-pekerja-terminal-logistik-2026',
+    title: 'Kesehatan pekerja terminal peti kemas: bagian penting dari layanan logistik',
+    description: 'Pemberitaan dari Tanjung Priok mengingatkan pentingnya kesehatan dan keselamatan bagi pekerja logistik.',
+    category: 'Kesehatan kerja', date: '2026-11-02', image: '/images/articles/pasar-kerja.webp', imageAlt: 'Ilustrasi pekerja berangkat kerja di kawasan perkotaan',
+    source: { name: 'Trenbisnis', url: 'https://trenbisnis.co.id/detail/4496953/jict-kesehatan-pekerja-fondasi-keandalan-logistik-nasional', date: '31 Oktober 2026' },
+    sections: [
+      { heading: 'Orang di balik pergerakan barang', paragraphs: ['Trenbisnis melaporkan penekanan Jakarta International Container Terminal terhadap kesehatan dan keselamatan pekerja dalam menjaga layanan logistik di kawasan Tanjung Priok.', 'Pekerjaan terminal melibatkan beragam peran dan kondisi lapangan. Risiko serta perlindungan yang diperlukan dapat berbeda menurut tugas, lokasi, dan jadwal kerja.'] },
+      { heading: 'Pertanyaan untuk memahami kondisi kerja', paragraphs: ['Saat mempertimbangkan pekerjaan logistik, tanyakan pelatihan keselamatan, alat pelindung yang sesuai, prosedur melaporkan bahaya, dan akses bantuan ketika terjadi insiden.', 'Perhatikan juga jadwal dan waktu istirahat. Penjelasan tentang kebijakan perusahaan sebaiknya diikuti dengan penerapan yang bisa dilihat dan dievaluasi.'] },
+      { heading: 'Cari informasi dari beberapa sumber', paragraphs: ['Pernyataan perusahaan memberi satu sudut pandang. Untuk memahami pengalaman kerja secara lebih lengkap, bandingkan dengan informasi lain yang relevan dan terkini, termasuk pengalaman pekerja di unit yang dituju.'] },
+    ],
+  },
+  {
+    slug: 'kompetensi-digital-pengalaman-kerja-lulusan-2026',
+    title: 'Kemnaker dorong pengalaman dan keterampilan digital untuk lulusan',
+    description: 'Kuliah umum di Politeknik Penerbangan Makassar menyoroti kompetensi, pengalaman, dan literasi digital sebagai bekal kerja.',
+    category: 'Awal karier', date: '2026-11-02', image: '/images/articles/lowongan.webp', imageAlt: 'Ilustrasi pencari kerja belajar menggunakan laptop',
+    source: { name: 'InfoPublik', url: 'https://infopublik.id/index.php/kategori/nasional-sosial-budaya/995406/siapkan-sdm-unggul-menuju-indonesia-emas-2045-kemnaker-tekankan-keahlian-dan-pengalaman-kerja', date: '1 November 2026' },
+    sections: [
+      { heading: 'Hubungkan pendidikan dengan kebutuhan kerja', paragraphs: ['InfoPublik melaporkan pesan Sekretaris Jenderal Kemnaker dalam kuliah umum di Politeknik Penerbangan Makassar pada 30 Oktober 2026. Ia menekankan pentingnya keterampilan yang relevan dan pengalaman kerja bagi generasi muda.', 'Literasi digital dan pemanfaatan kecerdasan buatan juga disebut sebagai bagian dari pengembangan kompetensi. Kebutuhan setiap jabatan tetap berbeda, sehingga pilihan belajar perlu disesuaikan dengan tujuan karier.'] },
+      { heading: 'Mulai dari pengalaman yang bisa dijelaskan', paragraphs: ['Proyek kuliah, kegiatan organisasi, pekerjaan lepas, atau pengalaman praktik dapat menjadi bahan untuk menunjukkan cara kamu menyelesaikan masalah. Jelaskan tugas pribadi, proses, dan hasilnya secara jujur.', 'Untuk keterampilan digital, pilih alat yang relevan dengan bidangmu dan latih penggunaannya pada tugas nyata. Periksa kembali hasil alat AI dan lindungi informasi pribadi atau rahasia.'] },
+      { heading: 'Susun langkah belajar', paragraphs: ['Baca beberapa deskripsi pekerjaan yang diminati, catat keterampilan yang sering muncul, lalu pilih satu atau dua hal untuk dipelajari. Simpan contoh hasil kerja yang boleh dibagikan sebagai portofolio.'] },
+    ],
+  },
+  {
     slug: 'pasar-kerja-indonesia-2026-angka-pengangguran',
     title: 'Pasar kerja Indonesia 2026: apa arti angka pengangguran 4,65%?',
     description: 'Data terbaru BPS menunjukkan lebih banyak orang bekerja. Pahami apa yang bisa dan tidak bisa diceritakan angka pengangguran tentang kualitas pekerjaan.',
