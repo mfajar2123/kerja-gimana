@@ -1,3 +1,25 @@
+import { articleDeepDives } from './article-deep-dives'
+import { articleSeo } from './article-seo'
+import { extraArticles } from './extra-articles'
+
+export interface ArticleFigure {
+  src: string
+  alt: string
+  caption: string
+}
+
+export interface ArticleSection {
+  heading: string
+  paragraphs: string[]
+  bullets?: string[]
+  figure?: ArticleFigure
+}
+
+export interface ArticleContributor {
+  name: string
+  role: string
+}
+
 export interface Article {
   slug: string
   title: string
@@ -7,7 +29,11 @@ export interface Article {
   image: string
   imageAlt: string
   source: { name: string; url: string; date: string }
-  sections: { heading: string; paragraphs: string[] }[]
+  sections: ArticleSection[]
+  author?: ArticleContributor
+  reviewer?: ArticleContributor
+  reviewedAt?: string
+  keywords?: string[]
 }
 
 export type ArticleSummary = Pick<Article, 'slug' | 'title' | 'description' | 'category' | 'date' | 'image' | 'imageAlt'>
@@ -833,6 +859,28 @@ const practicalNotes: Record<string, { heading: string; paragraphs: string[] }> 
   'maganghub-2026-persiapan-lulusan': { heading: 'Sebelum mengambil magang, periksa pengalaman belajarnya', paragraphs: ['Tanyakan tugas mingguan, nama atau peran pembimbing, umpan balik, jam kerja, lokasi, dan kompensasi sesuai ketentuan program.', 'Tetapkan dua atau tiga keterampilan yang ingin dipelajari dan catat hasil kerja yang boleh dimasukkan ke portofolio tanpa membuka informasi rahasia.'] },
   'jaminan-kehilangan-pekerjaan-2026': { heading: 'Langkah awal setelah kehilangan pekerjaan', paragraphs: ['Periksa status kepesertaan dan persyaratan JKP langsung pada BPJS Ketenagakerjaan atau Kemnaker. Siapkan dokumen yang diminta melalui kanal resmi.', 'Susun anggaran sementara dan jadwalkan waktu untuk administrasi, pencarian kerja, serta pemulihan. Jangan membagikan data akun kepada pihak yang menjanjikan pencairan pasti.'] },
   'kualitas-pekerjaan-indonesia-2026': { heading: 'Checklist menilai mutu sebuah pekerjaan', paragraphs: ['Catat jenis kontrak, penghasilan bersih, jam kerja, pola lembur, keselamatan, dukungan atasan, dan kesempatan belajar. Tandai mana yang menjadi prioritasmu.', 'Gunakan pertanyaan yang sama saat membandingkan beberapa perusahaan supaya keputusan tidak hanya bergantung pada kesan saat wawancara.'] },
+}
+
+articles.push(...extraArticles)
+
+const defaultAuthor = { name: 'Tim Editorial KerjaGimana', role: 'Penulis' }
+const defaultReviewer = { name: 'Tim Editorial KerjaGimana', role: 'Peninjau' }
+
+for (const article of articles) {
+  const seo = articleSeo[article.slug]
+  if (seo) {
+    article.title = seo.title
+    article.description = seo.description
+  }
+  article.author ??= defaultAuthor
+  article.reviewer ??= defaultReviewer
+  article.reviewedAt ??= article.date
+  article.keywords ??= [
+    article.category.toLocaleLowerCase('id-ID'),
+    ...article.title.toLocaleLowerCase('id-ID').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(word => word.length > 4).slice(0, 6),
+  ]
+  const deepDive = articleDeepDives[article.slug]
+  if (deepDive) article.sections.push(...deepDive)
 }
 
 for (const article of articles) {

@@ -50,8 +50,15 @@
 .article-detail-intro { max-width: 1000px; margin: 0 auto; }
 .article-detail-intro h1 { max-width: 1000px; font-size: clamp(42px, 6.2vw, 86px); text-wrap: balance; }
 .article-lead { max-width: 760px; margin: 24px 0 0; color: var(--kg-muted); font-size: clamp(17px, 1.8vw, 21px); line-height: 1.7; }
-.article-byline { display: flex; gap: 10px; margin-top: 28px; color: var(--kg-muted); font-size: 13px; }
+.article-byline { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; color: var(--kg-muted); font-size: 13px; }
 .article-byline span:first-child { color: var(--kg-white); font-weight: 700; }
+.article-review-note { margin: 10px 0 0; color: var(--kg-muted); font-size: 12px; line-height: 1.6; }
+.article-checklist { margin: 0 0 22px; padding-left: 1.25rem; color: #d5cece; font-size: clamp(15px, 1.25vw, 17px); line-height: 1.8; }
+.article-checklist li { margin-bottom: 9px; padding-left: 4px; }
+.article-checklist li::marker { color: var(--kg-red); }
+.article-figure { margin: 30px 0 10px; }
+.article-figure img { width: 100%; height: auto; border: 1px solid var(--kg-line); background: var(--kg-paper); }
+.article-figure figcaption { margin-top: 10px; color: var(--kg-muted); font-size: 12px; line-height: 1.6; }
 .article-cover { max-width: 1200px; margin: clamp(36px, 5vw, 68px) auto 0; }
 .article-cover img { width: 100%; max-height: 650px; object-fit: cover; aspect-ratio: 16 / 9; background: var(--kg-maroon); }
 .article-cover figcaption { margin-top: 10px; color: var(--kg-muted); font-size: 12px; }
