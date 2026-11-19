@@ -861,6 +861,91 @@ const practicalNotes: Record<string, { heading: string; paragraphs: string[] }> 
   'kualitas-pekerjaan-indonesia-2026': { heading: 'Checklist menilai mutu sebuah pekerjaan', paragraphs: ['Catat jenis kontrak, penghasilan bersih, jam kerja, pola lembur, keselamatan, dukungan atasan, dan kesempatan belajar. Tandai mana yang menjadi prioritasmu.', 'Gunakan pertanyaan yang sama saat membandingkan beberapa perusahaan supaya keputusan tidak hanya bergantung pada kesan saat wawancara.'] },
 }
 
+// The ten most recently published articles receive a focused update with an
+// additional worksheet or decision aid, so each article gives readers a next step.
+const recentArticleUpdates: Record<string, ArticleSection> = {
+  'data-talent-pool-linkedin-indonesia-november-2026': {
+    heading: 'Ubah data talent pool menjadi hipotesis karier',
+    paragraphs: [
+      'Ambil satu temuan dari publikasi, lalu tulis sebagai hipotesis yang bisa diuji, misalnya “permintaan untuk keterampilan X tampak meningkat di wilayah Y”. Cari lowongan aktif dari beberapa perusahaan di wilayah itu dan catat jabatan, tugas, tingkat pengalaman, keterampilan, serta tanggal iklannya. Jika istilah yang sama muncul berulang, itu bukti yang lebih dekat dengan kebutuhan perekrut saat ini daripada jumlah profil saja.',
+      'Gunakan tabel sederhana dengan kolom indikator, definisi sumber, tanggal, wilayah, dan keputusan yang mungkin berubah. Jangan menggabungkan angka dari platform berbeda sebelum memastikan unit hitung dan periodenya sebanding. Simpan tautan publikasi agar kesimpulan dapat diperiksa kembali ketika edisi berikutnya terbit.',
+    ],
+    bullets: ['Pisahkan data kandidat, lowongan, dan perekrutan yang benar-benar terjadi.', 'Catat batas cakupan dan tanggal setiap sumber.', 'Uji tren dengan lowongan aktif dan percakapan dengan praktisi.'],
+  },
+  'job-fair-kemnaker-november-2026-cara-memantau-agenda': {
+    heading: 'Buat catatan tindak lanjut setelah job fair',
+    paragraphs: [
+      'Saat berbicara dengan perusahaan, catat nama posisi, syarat yang belum jelas, kanal lamaran resmi, nama atau fungsi kontak, dan kapan tindak lanjut diperbolehkan. Setelah acara, cocokkan catatan itu dengan laman karier perusahaan. Jangan mengirim CV berulang ke alamat yang tidak tercantum pada kanal resmi.',
+      'Dalam satu atau dua hari kerja, kirim pesan singkat yang mengingatkan konteks percakapan dan menyertakan berkas yang diminta. Jika tidak ada tenggat tindak lanjut, tanyakan dengan sopan kapan proses diperkirakan bergerak, lalu catat tanggalnya. Untuk acara inklusif, hubungi penyelenggara lebih awal jika memerlukan format dokumen, akses lokasi, atau penyesuaian komunikasi tertentu.',
+    ],
+    bullets: ['Simpan nama acara dan tanggal dalam daftar lamaran.', 'Catat hanya informasi kontak yang diberikan untuk urusan rekrutmen.', 'Periksa lowongan dan status acara sekali lagi sebelum bepergian.'],
+  },
+  'panduan-memakai-kerjagimana-cari-perusahaan-review-gaji': {
+    heading: 'Susun ringkasan keputusan dari beberapa sumber',
+    paragraphs: [
+      'Sebelum memilih tawaran, buat satu halaman ringkasan: apa yang diketahui dari review, apa yang diketahui dari laporan gaji, dan apa yang masih perlu ditanyakan kepada perekrut. Catat tanggal serta konteks setiap informasi. Ulasan yang lebih lama mungkin menggambarkan tim atau kebijakan yang sudah berubah; laporan gaji dengan peran atau kota berbeda juga tidak setara.',
+      'Tandai mana yang merupakan pengalaman pribadi, median dari data kontribusi, dan janji tertulis dalam penawaran. Ketiganya punya bobot berbeda. Pakai bagian “belum diketahui” sebagai daftar pertanyaan wawancara, lalu simpan rincian resmi yang diberikan perusahaan untuk dibandingkan dengan data komunitas.',
+    ],
+    bullets: ['Bandingkan peran, kota, jenis hubungan kerja, dan periode yang sama.', 'Baca pola lintas beberapa kontribusi, bukan satu cerita saja.', 'Utamakan rincian tertulis untuk gaji dan syarat kerja.'],
+  },
+  'pertanyaan-interview-kerja-dan-jawaban-2026': {
+    heading: 'Buat bank cerita yang bisa dipakai untuk pertanyaan berbeda',
+    paragraphs: [
+      'Siapkan empat cerita singkat: pekerjaan yang berhasil, masalah yang belum berjalan baik, kerja sama yang sulit, dan sesuatu yang kamu pelajari sendiri. Untuk tiap cerita, catat konteks, tanggung jawabmu, tindakan spesifik, hasil yang dapat dibuktikan, dan apa yang akan kamu lakukan berbeda. Satu pengalaman dapat menjawab beberapa pertanyaan, tetapi sudut penekanannya perlu disesuaikan.',
+      'Latih jawaban dengan batas waktu sekitar dua menit, lalu minta orang lain mengajukan pertanyaan lanjutan seperti “bagian mana yang kamu kerjakan sendiri?” atau “bagaimana hasil itu diukur?”. Jika belum memiliki pengalaman kerja, gunakan proyek kuliah, organisasi, pekerjaan lepas, atau tanggung jawab keluarga yang relevan tanpa menyebutnya sebagai pekerjaan profesional.',
+    ],
+    bullets: ['Gunakan hasil yang benar dan dapat dijelaskan sumber angkanya.', 'Ambil tanggung jawab atas kontribusi pribadi tanpa menghapus peran tim.', 'Siapkan satu versi cerita tanpa jargon untuk pewawancara nonteknis.'],
+  },
+  'kata-kunci-cv-ats-2026': {
+    heading: 'Periksa kecocokan dengan matriks bukti',
+    paragraphs: [
+      'Buat tiga kolom dari deskripsi posisi: persyaratan, bukti yang kamu punya, dan bagian CV yang menunjukkannya. Persyaratan tanpa bukti menjadi petunjuk untuk mencari pengalaman atau belajar, bukan alasan untuk menyalin kata tersebut ke bagian keahlian. Untuk keterampilan yang masih dasar, jelaskan proyek latihan dan tingkat penguasaan secara akurat.',
+      'Sesudah menyimpan CV, salin teks dari berkas PDF ke dokumen kosong. Pastikan nama, tanggal, jabatan, dan urutan pengalaman tetap terbaca. Ini pemeriksaan sederhana atas ekstraksi teks, bukan jaminan lolos ATS tertentu karena konfigurasi dan proses tiap pemberi kerja berbeda.',
+    ],
+    bullets: ['Hubungkan setiap kata kunci dengan bukti spesifik.', 'Hapus istilah yang tidak dapat kamu jelaskan saat wawancara.', 'Ikuti format berkas yang diminta lowongan.'],
+  },
+  'kerja-remote-hybrid-indonesia-2026': {
+    heading: 'Sepakati cara kerja tertulis sebelum hari pertama',
+    paragraphs: [
+      'Minta dokumen atau ringkasan yang menjelaskan lokasi kerja yang diizinkan, hari hadir, jam inti, cara melaporkan hasil, respons di luar jam kerja, perangkat yang disediakan, dan siapa yang dihubungi saat koneksi atau perangkat bermasalah. Untuk kerja lintas zona waktu, tanyakan bagaimana tim mengatur rapat dan waktu respons agar beban tidak selalu jatuh pada satu pihak.',
+      'Pada minggu pertama, cocokkan kesepakatan itu dengan praktik nyata. Catat gangguan yang berulang—misalnya rapat tanpa agenda atau keputusan yang hanya disampaikan lewat percakapan—dan usulkan satu perubahan kecil seperti ringkasan keputusan tertulis. Cara kerja yang terdokumentasi membantu anggota baru bekerja tanpa harus selalu menebak ekspektasi.',
+    ],
+    bullets: ['Pastikan kewajiban hadir dan lokasi kerja tercatat.', 'Tanyakan aturan penggunaan serta pengembalian perangkat.', 'Simpan persetujuan perubahan jadwal melalui kanal resmi.'],
+  },
+  'profesi-paling-dicari-indonesia-2026': {
+    heading: 'Nilai peluang dari tiga sisi sebelum memilih pelatihan',
+    paragraphs: [
+      'Untuk satu profesi yang sedang kamu pertimbangkan, periksa tiga hal secara terpisah: apakah ada lowongan di wilayah yang bisa kamu jangkau, apakah tugas hariannya menarik dan sesuai kondisi kerja yang kamu inginkan, serta berapa biaya dan waktu untuk memenuhi syarat masuk. Profesi yang ramai dibicarakan belum tentu menawarkan jalur pemula yang tersedia di kota tempat tinggalmu.',
+      'Sebelum membayar sertifikasi atau bootcamp, cocokkan silabusnya dengan persyaratan lowongan yang benar-benar aktif. Minta contoh proyek lulusan, rincian biaya total, kebijakan pengembalian dana, dan data penempatan yang menyebut periode serta metode penghitungan. Jika informasi itu tidak tersedia, mulai dengan proyek latihan murah untuk menguji minat dan kemampuan dasar.',
+    ],
+    bullets: ['Bandingkan kebutuhan lokal, isi pekerjaan, dan biaya transisi.', 'Cari bukti hasil program dengan definisi penempatan yang jelas.', 'Uji minat lewat proyek kecil sebelum membuat komitmen mahal.'],
+  },
+  'ump-2026-dan-cara-membaca-upah-minimum': {
+    heading: 'Periksa angka upah minimum yang berlaku di lokasi kerja',
+    paragraphs: [
+      'Jangan memakai angka dari domisili atau kantor pusat perusahaan jika tempat kerjamu berada di wilayah lain. Periksa keputusan gubernur dan tanggal mulai berlakunya, lalu pastikan apakah ada UMK atau ketentuan sektoral yang relevan. Simpan tautan keputusan bersama penawaran kerja agar nama wilayah dan nilai yang dibandingkan tidak tertukar.',
+      'Bandingkan upah yang dijanjikan dengan komponen yang tertulis dalam kontrak dan slip gaji. Upah minimum bukan ukuran gaji wajar untuk semua profesi dan bukan jaminan bahwa suatu paket sudah kompetitif. Untuk masa kerja yang lebih panjang, periksa pula struktur dan skala upah perusahaan. Jika ada selisih, minta dasar hitung tertulis dan konsultasikan ke dinas ketenagakerjaan bila penjelasan belum memadai.',
+    ],
+    bullets: ['Pastikan lokasi kerja, periode berlaku, dan jenis upah minimum.', 'Pisahkan upah dari bonus serta tunjangan bersyarat.', 'Simpan keputusan daerah, kontrak, dan slip gaji.'],
+  },
+  'linkedin-untuk-pencari-kerja-2026': {
+    heading: 'Atur visibilitas sesuai kondisi pencarianmu',
+    paragraphs: [
+      'Sebelum menandai diri terbuka untuk peluang, periksa siapa yang dapat melihat status itu, informasi kontak yang tampil di profil publik, dan apakah perubahan profil dibagikan sebagai pembaruan ke jaringan. Pengaturan dapat berubah, jadi buka ulang halaman privasi LinkedIn sebelum mengunggah nomor telepon atau dokumen yang tidak ingin terlihat umum.',
+      'Untuk menghubungi praktisi, gunakan pesan yang menunjukkan konteks dan permintaan kecil yang jelas. Contoh: “Halo, saya sedang mempelajari peran analis operasional. Saya melihat Anda bekerja di bidang ini; bolehkah saya bertanya satu hal tentang keterampilan yang paling sering dipakai sehari-hari?” Hormati waktu mereka dan jangan mengirim data pribadi atau CV sebelum diminta.',
+    ],
+    bullets: ['Tinjau pratinjau profil publik dan pengaturan Open to Work.', 'Jangan unggah data pelanggan atau dokumen perusahaan.', 'Batasi tindak lanjut dan terima jika orang tersebut tidak merespons.'],
+  },
+  'tunjangan-karyawan-yang-perlu-ditanyakan': {
+    heading: 'Pisahkan hak dasar dari manfaat tambahan perusahaan',
+    paragraphs: [
+      'Saat membandingkan paket, pisahkan kewajiban yang mengikuti aturan dan status kerja—misalnya kepesertaan jaminan sosial atau hak cuti yang berlaku—dari manfaat tambahan yang ditawarkan perusahaan seperti asuransi ekstra, uang makan, bonus, dan anggaran belajar. Nama manfaat saja belum cukup: cek siapa yang ditanggung, kapan mulai berlaku, batas klaim, serta apa yang terjadi saat hubungan kerja berakhir.',
+      'Beri nilai hanya pada manfaat yang dapat kamu gunakan dan ketahui syaratnya. Reimbursement bukan uang tunai pasti jika perlu mengeluarkan biaya lebih dulu; bonus kinerja juga bukan pendapatan terjamin. Minta ringkasan manfaat tertulis dan cocokkan dengan kontrak, kebijakan perusahaan, serta slip gaji setelah mulai bekerja.',
+    ],
+    bullets: ['Tandai manfaat wajib, manfaat tambahan, dan komponen bersyarat.', 'Catat masa tunggu, plafon, kontribusi pekerja, serta pengecualian.', 'Bandingkan nilai tahunan yang realistis, bukan nilai promosi maksimum.'],
+  },
+}
+
 articles.push(...extraArticles)
 
 const defaultAuthor = { name: 'Tim Editorial KerjaGimana', role: 'Penulis' }
@@ -886,4 +971,6 @@ for (const article of articles) {
 for (const article of articles) {
   const note = practicalNotes[article.slug]
   if (note) article.sections.push(note)
+  const update = recentArticleUpdates[article.slug]
+  if (update) article.sections.push(update)
 }
